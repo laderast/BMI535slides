@@ -1,0 +1,161 @@
+---
+title: "Intro to Big Data and Command Line Review"
+subtitle: "BMI 535/635"
+author: "Ted Laderas"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+library(xaringanthemer)
+mono_light(
+  base_color = "midnightblue",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+  link_color = "deepskyblue1",
+  text_font_size = "28px"
+)
+```
+
+
+---
+class: center, middle
+
+# Welcome and Introduction
+
+---
+# Skills Covered in this Course:
+
+1. **Utilize** alternative data storage and data structures to handle Big Datasets
+1. **Create**, ***Normalize**, **Load and **Query** Relational Databases
+1. **Understand** the types of NoSQL Databases and their uses
+1. **Create** and **Run** jobs on High Performance Computing systems including Exacloud and Amazon Web Services
+1. **Understand** and **utilize** the map-reduce programming pattern
+1. **Reproduce**, **Implement**, **Debug**, and **Document** an established biomedical data workflow
+1. (BMI 635 only) **Design** and **Evaluate** the efficiency of parallelized analysis workflows
+
+---
+# Structure of this Course
+
+- Command Line Review
+- Useful Data Structures in R/Python for handling Big Data
+- High Performance Computing (HPC)
+  - Exacloud and Amazon Web Services (AWS)
+- Databases
+  - Relational Databases
+  - NoSQL Dataqbases
+- Final Project
+---
+# Grading
+
+- Assignments: 40%
+- Midterm Exam: 20%
+- Final Project: 40%
+
+---
+
+---
+# Big Data
+
+---
+# Big Data and Personalized Medicine
+
+---
+# Big Data Processing Strategies
+
+- Massively Parallel Processing
+- Cluster Computing
+- Map/Reduce
+
+---
+# Storing and Querying Big Data
+
+- Data Structures
+- Relational Databases
+- NoSQL (Not only SQL) Databases
+  - Document stores
+  - Column stores
+  - Graph Databases
+  
+---
+class: center, middle
+
+# Command Line Review 
+
+---
+# Our Safe Space: state.ohsu.edu
+
+---
+# Useful Commands
+
+- `ls` - listing files within a directory
+- `mv` - move/rename a file
+- `rm` - removing files 
+- `rm -r` - removing files within a directory (recursive)
+- `grep` - look for a pattern/regular expression in a file
+- `chmod` - file permissions
+- `pwd` - current directory
+- `head/cat/tail` - look at the contents of a file
+
+---
+# Review: Files
+
+- Remember that all files are case-sensitive
+- Everything in unix is a file
+
+---
+# Directory Structure
+
+---
+# Relative vs. Absolute Paths
+
+- `cd`
+---
+# Learn a Command Line text editor (vi/nano)
+
+- `vi` - guaranteed to be on any linux system
+  - A little harder to learn
+  - edit mode versus add mode
+- `nano` - usually on any linux system
+  - A little easier to learn
+
+---
+# Shell Scripting
+
+- How to set up a shell script
+- What a she-bang is
+
+---
+# Pipes
+
+- Know what a pipe `|` is and why it's useful
+
+---
+# Scripting Configuration
+
+- `$PATH` variable (where applications live)
+- Environment variables (passwords and connections)
+  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` 
+
+---
+# Regular Expressions
+
+- Used to specify string matching queries
+- Highly flexible
+
+---
+# What does this script do?
+
+

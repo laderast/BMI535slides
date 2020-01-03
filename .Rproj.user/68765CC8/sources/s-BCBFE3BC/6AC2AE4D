@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1578091809752.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6AC2AE4D",
+    "lastKnownWriteTime" : 1578090813,
+    "last_content_update" : 1578090813,
+    "path" : "C:/Code/BMI535slides/docs/week1.1.1_intro.Rmd",
+    "project_path" : "docs/week1.1.1_intro.Rmd",
+    "properties" : {
+        "cursorPosition" : "43,26",
+        "scrollLine" : "15"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

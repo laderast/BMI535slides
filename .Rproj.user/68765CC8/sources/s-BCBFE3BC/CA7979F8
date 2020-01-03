@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1578091750881.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CA7979F8",
+    "lastKnownWriteTime" : 1578091875,
+    "last_content_update" : 1578091875165,
+    "path" : "C:/Code/BMI535slides/docs/week1.1.2_intro_to_databases.Rmd",
+    "project_path" : "docs/week1.1.2_intro_to_databases.Rmd",
+    "properties" : {
+        "cursorPosition" : "34,0",
+        "scrollLine" : "2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
