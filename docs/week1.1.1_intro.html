@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Intro to Big Data and Command Line Review</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ted Laderas" />
+    <meta name="date" content="2020-01-03" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Intro to Big Data and Command Line Review
+## BMI 535/635
+### Ted Laderas
+### 2020-01-03
+
+---
+
+
+
+
+
+
+---
+class: center, middle
+
+# Welcome and Introduction
+
+---
+# Skills Covered in this Course:
+
+1. **Utilize** alternative data storage and data structures to handle Big Datasets
+1. **Create**, ***Normalize**, **Load and **Query** Relational Databases
+1. **Understand** the types of NoSQL Databases and their uses
+1. **Create** and **Run** jobs on High Performance Computing systems including Exacloud and Amazon Web Services
+1. **Understand** and **utilize** the map-reduce programming pattern
+1. **Reproduce**, **Implement**, **Debug**, and **Document** an established biomedical data workflow
+1. (BMI 635 only) **Design** and **Evaluate** the efficiency of parallelized analysis workflows
+
+---
+# Structure of this Course
+
+- Command Line Review
+- Useful Data Structures in R/Python for handling Big Data
+- High Performance Computing (HPC)
+  - Exacloud and Amazon Web Services (AWS)
+- Databases
+  - Relational Databases
+  - NoSQL Dataqbases
+- Final Project
+---
+# Grading
+
+- Assignments: 40%
+- Midterm Exam: 20%
+- Final Project: 40%
+
+---
+
+---
+# Big Data
+
+---
+# Big Data and Personalized Medicine
+
+---
+# Big Data Processing Strategies
+
+- Massively Parallel Processing
+- Cluster Computing
+- Map/Reduce
+
+---
+# Storing and Querying Big Data
+
+- Data Structures
+- Relational Databases
+- NoSQL (Not only SQL) Databases
+  - Document stores
+  - Column stores
+  - Graph Databases
+  
+---
+class: center, middle
+
+# Command Line Review 
+
+---
+# Our Safe Space: state.ohsu.edu
+
+---
+# Useful Commands
+
+- `ls` - listing files within a directory
+- `mv` - move/rename a file
+- `rm` - removing files 
+- `rm -r` - removing files within a directory (recursive)
+- `grep` - look for a pattern/regular expression in a file
+- `chmod` - file permissions
+- `pwd` - current directory
+- `head/cat/tail` - look at the contents of a file
+
+---
+# Review: Files
+
+- Remember that all files are case-sensitive
+- Everything in unix is a file
+
+---
+# Directory Structure
+
+---
+# Relative vs. Absolute Paths
+
+- `cd`
+---
+# Learn a Command Line text editor (vi/nano)
+
+- `vi` - guaranteed to be on any linux system
+  - A little harder to learn
+  - edit mode versus add mode
+- `nano` - usually on any linux system
+  - A little easier to learn
+
+---
+# Shell Scripting
+
+- How to set up a shell script
+- What a she-bang is
+
+---
+# Pipes
+
+- Know what a pipe `|` is and why it's useful
+
+---
+# Scripting Configuration
+
+- `$PATH` variable (where applications live)
+- Environment variables (passwords and connections)
+  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` 
+
+---
+# Regular Expressions
+
+- Used to specify string matching queries
+- Highly flexible
+
+---
+# What does this script do?
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
