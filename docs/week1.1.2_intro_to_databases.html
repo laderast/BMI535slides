@@ -4,7 +4,7 @@
     <title>A Brief Intro to Databases</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ted Laderas" />
-    <meta name="date" content="2020-01-03" />
+    <meta name="date" content="2020-01-06" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -13,7 +13,7 @@ class: center, middle, inverse, title-slide
 
 # A Brief Intro to Databases
 ### Ted Laderas
-### 2020-01-03
+### 2020-01-06
 
 ---
 
@@ -22,7 +22,15 @@ class: center, middle, inverse, title-slide
 class: center, middle
 
 # Disclaimer: I got a C in the Database Course
-## (Now I teach them)
+## (Now I teach about them)
+
+---
+# Learning Objectives
+
+- Define what a database is
+- Define what a Database Management System (DBMS) is
+- Define what data model is
+- Define what the Structured Query Language (SQL) is for
 
 ---
 # What is a Database?
@@ -40,36 +48,41 @@ A database can be simple as a collection of flat files
 ---
 # Flat Files/Tables have Disadvantages
 
-Any ideas?
-
--- 
 - lack of access control/security
 - lack of data integrity (did we both update a table at once?)
-- lack of quick access to the specific data
+- lack of quick access to specific data
 
 ---
 # Database Management Systems (DBMS)
 
 Software that allows for the creation, defintion, and manipulation of data in the database
 
-- accommodates large datasets (storage and querying)
-- ensures data integrity when multiple users are accessing/modifying it at once3
+- accommodates large datasets (storage; querying; indexing)
+- ensures data integrity when multiple users are accessing/modifying it at once (concurrency)
 - crash recovery, logging
 - security and access control
 
 ---
 # Relational Data Model
 
-
+![](image/er_example.jpg)&lt;!-- --&gt;
 
 ---
 # Structured Query Language
 
+- Used to create, modify, and query tables in a relational database
+- Verbs
+  - `SELECT`, `CREATE TABLE`, `INNER JOIN`
+- Modifiers
+  - `FROM`, `WHERE`, `LIKE`
+- Criteria
+  - `Year &gt; 2005`
+- A sequence of SQL commands is called a *query*
 
 ---
 # Structured Query Language example
 
----
+![](image/Slide4.JPG)&lt;!-- --&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

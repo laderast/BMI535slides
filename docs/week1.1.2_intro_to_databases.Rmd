@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, echo=FALSE)
 library(xaringanthemer)
 mono_light(
   base_color = "midnightblue",
@@ -28,7 +28,15 @@ mono_light(
 class: center, middle
 
 # Disclaimer: I got a C in the Database Course
-## (Now I teach them)
+## (Now I teach about them)
+
+---
+# Learning Objectives
+
+- Define what a database is
+- Define what a Database Management System (DBMS) is
+- Define what data model is
+- Define what the Structured Query Language (SQL) is for
 
 ---
 # What is a Database?
@@ -46,33 +54,44 @@ A database can be simple as a collection of flat files
 ---
 # Flat Files/Tables have Disadvantages
 
-Any ideas?
-
--- 
 - lack of access control/security
 - lack of data integrity (did we both update a table at once?)
-- lack of quick access to the specific data
+- lack of quick access to specific data
 
 ---
 # Database Management Systems (DBMS)
 
 Software that allows for the creation, defintion, and manipulation of data in the database
 
-- accommodates large datasets (storage and querying)
-- ensures data integrity when multiple users are accessing/modifying it at once3
+- accommodates large datasets (storage; querying; indexing)
+- ensures data integrity when multiple users are accessing/modifying it at once (concurrency)
 - crash recovery, logging
 - security and access control
 
 ---
 # Relational Data Model
 
-
+```{r echo=FALSE}
+knitr::include_graphics("image/er_example.jpg")
+```
 
 ---
 # Structured Query Language
 
+- Used to create, modify, and query tables in a relational database
+- Verbs
+  - `SELECT`, `CREATE TABLE`, `INNER JOIN`
+- Modifiers
+  - `FROM`, `WHERE`, `LIKE`
+- Criteria
+  - `Year > 2005`
+- A sequence of SQL commands is called a *query*
 
 ---
 # Structured Query Language example
 
----
+```{r echo=FALSE}
+knitr::include_graphics("image/Slide3.JPG")
+```
+
+

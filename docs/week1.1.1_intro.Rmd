@@ -1,7 +1,7 @@
 ---
 title: "Intro to Big Data and Command Line Review"
 subtitle: "BMI 535/635"
-author: "Ted Laderas"
+author: "Ted Laderas and Christina Zheng"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -16,7 +16,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, echo=FALSE)
 library(xaringanthemer)
 library(xaringanthemer)
 mono_light(
@@ -65,12 +65,125 @@ class: center, middle
 - Final Project: 40%
 
 ---
+# Data is Being collected all the time?
+
+- What are some kinds of big data?
 
 ---
 # Big Data
 
+Voluminous and complex datasets are being collected all the time! 
+
+We need approaches to using this data:
+
+- capturing; storing; sharing
+- analyzing; querying; visualizing
+---
+# Challenges of Big Data
+
+```{r echo=FALSE}
+knitr::include_graphics("image/5V.png")
+```
+
 ---
 # Big Data and Personalized Medicine
+
+```{r echo=FALSE}
+knitr::include_graphics("image/health_data_types.png")
+```
+
+---
+# Precision Medicine
+
+```{r echo=FALSE}
+knitr::include_graphics("image/precision.png")
+```
+---
+# We need lots of genomes to make this happen
+
+Need to identify associations with disease
+
+- Phenotype information
+- Genotype Information
+
+---
+# 1000 Genomes Project
+
+International project to construct a foundational data set of human genetics
+
+- discover virtually all common human variation
+	- single nucleotide polymorphisms
+	- structural variants
+	- haplotypes
+
+- develop sequence analysis methods, tools, and reagents that can be transferred to other sequencing projects
+
+---
+# (More than) 1000 genomes:
+
+2504 individuals, 26 populations
+
+```{r echo=FALSE}
+knitr::include_graphics("image/1000genomes.png")
+```
+---
+# 1000 genomes information
+
+2504 individuals, 26 populations
+ - low-coverage whole genome sequencing (mean of 7.4X)
+ - deep exome sequencing (mean of 65.7X)
+ - dense microarray genotyping
+
+84.7M SNPs, 3.6 million indels, 60,000 structural variants
+ - >99% of SNP variants >1% frequency (what does that mean?)
+
+---
+
+# Variation in 1000 genomes
+
+```{r echo=FALSE}
+knitr::include_graphics("image/1000var.png")
+```
+---
+class: center, middle
+
+# We need more genomes!
+
+---
+# Open Respositories of Genomic Data
+
+```{r echo=FALSE}
+knitr::include_graphics("image/pgp.png")
+```
+
+---
+# GA4GH
+
+```{r echo = FALSE}
+knitr::include_graphics("image/ga4gh.png")
+```
+
+---
+
+# DNA: What are some issues?
+
+- Privacy/identifiability
+- Using specific genomic markers and de-identified information, we can uniquely identify about 87% of the US population that has participated in either 1000 genomes or GA4GH
+---
+
+# Need to protect privacy 
+
+Controlled Access
+  - approved access
+  - recording/audited queries
+  - participant based access
+
+---
+# NIH Policy
+
+```{r echo = FALSE}
+knitr::include_graphics("image/nih.png")
+```
 
 ---
 # Big Data Processing Strategies
@@ -98,7 +211,40 @@ class: center, middle
 # Our Safe Space: state.ohsu.edu
 
 ---
-# Useful Commands
+# Reference: Linux Fundamentals
+
+- Paul Cobbaut (see course materials week 1)
+
+---
+# Review: Files
+
+- 9.2: Remember that all files are case-sensitive
+- 9.3: Everything in unix is a file
+    - including folders and devices!
+    - 
+
+---
+# Directory Structure
+
+`/home/its/ug1/eev51vn/report.doc`
+
+```{r echo=FALSE}
+knitr::include_graphics("image/file_directories.png")
+```
+
+---
+# Relative vs. Absolute Paths (8.3)
+
+If I'm in `/home/its/ug1`, how can I refer to `report.doc` from this folder?
+
+```{r echo=FALSE}
+knitr::include_graphics("image/file_directories.png")
+```
+
+---
+# Useful Commands for manipulating files
+
+Be familiar with the following commands: 
 
 - `ls` - listing files within a directory
 - `mv` - move/rename a file
@@ -110,20 +256,7 @@ class: center, middle
 - `head/cat/tail` - look at the contents of a file
 
 ---
-# Review: Files
-
-- Remember that all files are case-sensitive
-- Everything in unix is a file
-
----
-# Directory Structure
-
----
-# Relative vs. Absolute Paths
-
-- `cd`
----
-# Learn a Command Line text editor (vi/nano)
+# Learn a Command Line text editor (vi/nano, chapter 22)
 
 - `vi` - guaranteed to be on any linux system
   - A little harder to learn
@@ -132,10 +265,10 @@ class: center, middle
   - A little easier to learn
 
 ---
-# Shell Scripting
+# Shell Scripting (chapter 23-26)
 
 - How to set up a shell script
-- What a she-bang is
+- What a she-bang is (23.3)
 
 ---
 # Pipes
@@ -143,19 +276,16 @@ class: center, middle
 - Know what a pipe `|` is and why it's useful
 
 ---
-# Scripting Configuration
+# Scripting Configuration (chapter 14)
 
-- `$PATH` variable (where applications live)
-- Environment variables (passwords and connections)
-  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` 
+- `$PATH` variable (where applications live, 14.8)
+- Environment variables (passwords and connections, 14.9)
+  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` (14.10)
 
 ---
-# Regular Expressions
+# Regular Expressions (Chapter 21)
 
 - Used to specify string matching queries
 - Highly flexible
-
----
-# What does this script do?
 
 
