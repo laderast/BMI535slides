@@ -65,7 +65,7 @@ class: center, middle
 - Final Project: 40%
 
 ---
-# Data is Being collected all the time?
+# Data is Being collected all the time
 
 - What are some kinds of big data?
 
