@@ -55,7 +55,7 @@ class: center, middle
   - Exacloud and Amazon Web Services (AWS)
 - Databases
   - Relational Databases
-  - NoSQL Dataqbases
+  - NoSQL Databases
 - Final Project
 ---
 # Grading
@@ -79,12 +79,9 @@ We need approaches to using this data:
 - capturing; storing; sharing
 - analyzing; querying; visualizing
 ---
-# Challenges of Big Data
-
 ```{r echo=FALSE}
 knitr::include_graphics("image/5V.png")
 ```
-
 ---
 # Big Data and Personalized Medicine
 
@@ -101,10 +98,17 @@ knitr::include_graphics("image/precision.png")
 ---
 # We need lots of genomes to make this happen
 
+.pull-left[
+
 Need to identify associations with disease
 
 - Phenotype information
-- Genotype Information
+- Genotype Information]
+
+.pull-right[
+
+  <img src="image/gwas_infographic.jpg">
+]
 
 ---
 # 1000 Genomes Project
@@ -184,6 +188,11 @@ Controlled Access
 ```{r echo = FALSE}
 knitr::include_graphics("image/nih.png")
 ```
+
+---
+class: center, middle
+
+# Back to Big Data
 
 ---
 # Big Data Processing Strategies
