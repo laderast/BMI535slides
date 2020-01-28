@@ -14,7 +14,8 @@ Installation instructions are in `00_load_database.ipynb`.
 
 ## Contents
 
-`docs/week1.1.2_intro_to_databases.html` - slides introducing basic database concepts
-`00-load_database.ipynb` - Installing postgres, connecting your notebook, loading the data
-`01-intro_to_sql.ipynb` - SQL Queries
-`02-database_design` - Introduction to data modeling and database design
+- `docs/week1.1.2_intro_to_databases.html` - slides introducing basic database concepts
+- `00-load_database.ipynb` - Installing postgres, connecting your notebook, loading the data
+- `01-intro_to_sql.ipynb` - SQL Queries
+- `02-database_design` - Introduction to data modeling and database design
+- `data/` - Datafiles are in here
