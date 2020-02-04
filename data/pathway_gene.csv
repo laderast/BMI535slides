@@ -1,8 +1,8 @@
-gene_symbol,ensembl_gene_id,reactome_pathway_id,pathway_name
-JAK1,ENSG00000198793,R-HSA-168256,Immune System
-JAK1,ENSG00000198793,R-HSA-913531,Interferon Signaling
-AKT1,ENSG00000142208,R-HSA-168256,Immune System
-AKT1,ENSG00000142208,R-HSA-382551,Transport of small molecules
-MTOR,ENSG00000162434,R-HSA-168256,Immune System
-STAT3,ENSG00000168610,R-HSA-168256,Immune System
-STAT3,ENSG00000168610,R-HSA-382551,Transport of small molecules
+gene_symbol,ensembl_gene_id,reactome_pathway_id,pathway_name,immune_pathway
+JAK1,ENSG00000198793,R-HSA-168256,Immune System,TRUE
+JAK1,ENSG00000198793,R-HSA-913531,Interferon Signaling,TRUE
+AKT1,ENSG00000142208,R-HSA-168256,Immune System,TRUE
+AKT1,ENSG00000142208,R-HSA-382551,Transport of small molecules,FALSE
+MTOR,ENSG00000162434,R-HSA-168256,Immune System,TRUE
+STAT3,ENSG00000168610,R-HSA-168256,Immune System,TRUE
+STAT3,ENSG00000168610,R-HSA-382551,Transport of small molecules,FALSE
