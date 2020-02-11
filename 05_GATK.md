@@ -42,8 +42,15 @@ make
 ```
 
 ```
-# Add my bwa-0.7.17/ to PATH
+# Add my bwa-0.7.17/ folder to PATH
 export PATH="$HOME/bwa-0.7.17:$PATH"
-# run bwa index
+# run bwa index to create index on hg19 genome file
+# You don't need to run this - it's already created
+# Just included so you know that this is a step
 bwa index ~/var_data/GATKBundle/ucsc.hg19.fasta
+```
+
+```
+# run bwa mem on our fastq file
+bwa mem -Y -t 12 -R '@RG\tID:SRR702072\tPL:Illumina\tLB:SRR702072\tSM:SRR702072' ~/var_data/GATKBundle/ucsc.hg19.fasta ~/var_data/fastq/SRR702072_1.filt.fastq -o SRR702072_1.sam
 ```
