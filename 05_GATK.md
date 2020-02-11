@@ -37,6 +37,13 @@ bzip2 -d bwa-0.7.17.tar.gz
 tar -xvf bwa-0.7.17.tar
 cd bwa-0.7.17
 more README.md
+# compile the code
 make
 ```
 
+```
+# Add my bwa-0.7.17/ to PATH
+export PATH="$HOME/bwa-0.7.17:$PATH"
+# run bwa index
+bwa index ~/var_data/GATKBundle/ucsc.hg19.fasta
+```
