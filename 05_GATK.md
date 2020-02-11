@@ -70,3 +70,16 @@ Run `samtools flagstaff` on our `.sam` file:
 samtools flagstat SRR702072.sam
 ```
 
+# GATK
+
+Download, unzip with `unzip`, and add to your `$PATH`
+
+```
+wget https://github.com/broadinstitute/gatk/releases/download/4.1.4.1/gatk-4.1.4.1.zip
+```
+
+```
+gatk --list
+gatk MarkDuplicates --help
+
+```
