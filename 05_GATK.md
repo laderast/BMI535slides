@@ -53,7 +53,7 @@ bwa index ~/var_data/GATKBundle/ucsc.hg19.fasta
 ```
 # run bwa mem on our fastq file
 # run this in your student folder
-bwa mem -Y -t 12 -R '@RG\tID:SRR702072\tPL:Illumina\tLB:SRR702072\tSM:SRR702072' ~/var_data/GATKBundle/ucsc.hg19.fasta ~/var_data/fastq/SRR702072_1.filt.fastq -o SRR702072.sam
+bwa mem -Y -t 12 -R '@RG\tID:SRR702072\tPL:Illumina\tLB:SRR702072\tSM:SRR702072' ~/var_data/GATKBundle/ucsc.hg19.fasta ~/var_data/fastq/SRR702072_1.filt.fastq ~/var_data/fastq/SRR702072_2.filt.fastq -o SRR702072.sam
 ```
 
 # Samtools
