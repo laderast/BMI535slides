@@ -70,6 +70,7 @@ Run `samtools flagstaff` on our `.sam` file:
 samtools flagstat SRR702072.sam
 ```
 
+
 # GATK
 
 Download, unzip with `unzip`, and add to your `$PATH`
@@ -83,3 +84,7 @@ gatk --list
 gatk MarkDuplicates --help
 
 ```
+
+GATK Best Practices Tutorials: https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1
+
+HaplotypeCaller: https://docs.google.com/file/d/0B2dK2q40HDWeYzVTUGs0bjM3M1E/preview
