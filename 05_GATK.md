@@ -80,13 +80,22 @@ wget https://github.com/broadinstitute/gatk/releases/download/4.1.4.1/gatk-4.1.4
 ```
 
 ```
+#list all utilities
 gatk --list
-gatk MarkDuplicates --help
-
+#convert SAM to BAM file
+gatk SamFormatConverter -I SRR702072.sam -O SRR702072.bam
+#sort BAM file using SortSam
+gatk SortSam -I SRR702072.bam -O sortedSRR702072.bam -SO coordinate
 ```
 
+Try running `gatk MarkDuplicates` on `sortedSRR702072.bam` by reading the man page!
+
+```
+gatk MarkDuplicates --help
+```
+
+## Useful GATK Links
+
 GATK Command-line Syntax: https://gatk.broadinstitute.org/hc/en-us/articles/360035531892
-
 GATK Best Practices Tutorials: https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1
-
 HaplotypeCaller: https://docs.google.com/file/d/0B2dK2q40HDWeYzVTUGs0bjM3M1E/preview
