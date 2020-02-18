@@ -88,7 +88,7 @@ gatk SamFormatConverter -I SRR702072.sam -O SRR702072.bam
 gatk SortSam -I SRR702072.bam -O sortedSRR702072.bam -SO coordinate
 ```
 
-Try running `gatk MarkDuplicates` on `sortedSRR702072.bam` by reading the man page!
+Try running `gatk MarkDuplicates` on `sortedSRR702072.bam` by [reading the man page!](https://gatk.broadinstitute.org/hc/en-us/articles/360037052812-MarkDuplicates-Picard-)
 
 ```
 gatk MarkDuplicates --help
