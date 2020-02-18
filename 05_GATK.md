@@ -64,7 +64,7 @@ Install samtools and add to your `$PATH` - more instructions here: http://www.ht
 wget https://github.com/samtools/samtools/releases/download/1.10/samtools-1.10.tar.bz2
 ```
 
-Run `samtools flagstaff` on our `.sam` file:
+Run `samtools flagstat` on our `.sam` file:
 
 ```
 samtools flagstat SRR702072.sam
