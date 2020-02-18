@@ -94,8 +94,15 @@ Try running `gatk MarkDuplicates` on `sortedSRR702072.bam` by [reading the man p
 gatk MarkDuplicates --help
 ```
 
+## Where is GATK on exacloud?
+
+```
+/opt/installed/gatk-4.0.0.0/gatk
+```
+
 ## Useful GATK Links
 
 - GATK Command-line Syntax: https://gatk.broadinstitute.org/hc/en-us/articles/360035531892
+- GATK Data Preprocessing for Variant Discovery (start here, thanks Mike!): https://gatk.broadinstitute.org/hc/en-us/articles/360035535912-Data-pre-processing-for-variant-discovery
 - GATK Best Practices Tutorials: https://www.broadinstitute.org/partnerships/education/broade/best-practices-variant-calling-gatk-1
 - HaplotypeCaller: https://docs.google.com/file/d/0B2dK2q40HDWeYzVTUGs0bjM3M1E/preview
