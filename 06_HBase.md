@@ -147,17 +147,17 @@ create_namespace laderast
 
 So, create your own namespace (use your username)!
 
-# Creating an HBase Table
+# Creating an HBase Table / Column Family
+
+If the table doesn't exist, you have to create both at once.
 
 ```
-create 'laderast:gtable`
+create 'laderast:gtable', "gene_info"
 ```
 
-# Adding a Column Family
+# 'put'ing data into `laderast:gtable`
 
-```
-create 'laderast:gtable', "gene"
-```
+
 
 # Describe
 
@@ -165,7 +165,23 @@ create 'laderast:gtable', "gene"
 describe 'laderast:gtable'
 ```
 
-#
+# Table Design Rules of Thumb
+
+[From HBase Reference](http://hbase.apache.org/book.html): 
+
+- Aim to have regions sized between 10 and 50 GB.
+
+- Aim to have cells no larger than 10 MB, or 50 MB if you use mob. Otherwise, consider storing your cell data in HDFS and store a pointer to the data in HBase.
+
+- A typical schema has between 1 and 3 column families per table. HBase tables should not be designed to mimic RDBMS tables.
+
+- Around 50-100 regions is a good number for a table with 1 or 2 column families. Remember that a region is a contiguous segment of a column family.
+
+- Keep your column family names as short as possible. The column family names are stored for every value (ignoring prefix encoding). They should not be self-documenting and descriptive like in a typical RDBMS.
+
+- If you are storing time-based machine data or logging information, and the row key is based on device ID or service ID plus time, you can end up with a pattern where older data regions never have additional writes beyond a certain age. In this type of situation, you end up with a small number of active regions and a large number of older regions which have no new writes. For these situations, you can tolerate a larger number of regions because your resource consumption is driven by the active regions only.
+
+- If only one column family is busy with writes, only that column family accomulates memory. Be aware of write patterns when allocating resources.
 
 # HBase versus Hive
 
