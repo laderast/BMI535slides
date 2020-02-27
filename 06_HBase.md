@@ -33,7 +33,9 @@ Data is usually bulk loaded.
 
 # How is the Data Stored?
 
-HBase is made for distributed file systems, in particular, Hadoop.
+- Data is *sorted and stored* as a sorted data structure
+- Sorting is critical for fast search and access
+- HBase is made for distributed file systems, in particular, Hadoop.
 
 # HBase is a little primitive
 
@@ -47,25 +49,59 @@ Tables in HBase are versioned.
 
 # The architecture of HBase
 
+
+
 # Column Families
 
 A table is decomposed into *column families*, which you can think of as subtables within a larger table.
 
-A column family represents the basic unit for adding data.
-
 A column family is defined as a key-value pair: *row key* and associated columns
+
+A column family represents the basic unit for adding data. 
+
+You make a column family by thinking about what columns should go together.
+
+Example:
+
+Customer Table
+
+- Customer ID
+
+Customer Info Family
+key: Customer Id
+- Customer Name
+- Age
+- Honorific
+
+Address Column Family:
+key: Zipcode
+- Address
+- City
+- State
 
 # Column Families and Relational Databases
 
-- Column families are analogous to single tables in a database structure
-- Each 
+- Column families are analogous to single tables in a relational database structure
+- Each row key and tuple is analogous to a *row* in a relational database
+
+# The Row Key is everything
+
+The row key determines the position of a row in the database.
+
+Pick it carefully according to the queries you want to make.
+
+# Example of a Row Key
+
+Say we want to 
+
+Table of websites and information
+    - row key: domain 
 
 # What's crazy about HBase
 
 - The row key can be (almost) anything: 
     - alphanumeric, integer, even other data structures
     
-# 
 
 # 
 
@@ -132,6 +168,7 @@ describe 'laderast:gtable'
 
 # Helpful Links
 
+- [Understanding HBase and BigTable](https://dzone.com/articles/understanding-hbase-and-bigtab)
 - [HBase Reference Guide](http://hbase.apache.org/book.html), especially [HBase Data Model](http://hbase.apache.org/book.html#datamodel)
 - [Why column stores?](https://blog.pythian.com/why-column-stores/)
 - [The beauty of column oriented data](https://towardsdatascience.com/the-beauty-of-column-oriented-data-2945c0c9f560)
