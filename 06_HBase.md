@@ -132,6 +132,6 @@ describe 'laderast:gtable'
 
 # Helpful Links
 
-- [HBase Reference Guide](http://hbase.apache.org/book.html)
+- [HBase Reference Guide](http://hbase.apache.org/book.html), especially [HBase Data Model](http://hbase.apache.org/book.html#datamodel)
 - [Why column stores?](https://blog.pythian.com/why-column-stores/)
 - [The beauty of column oriented data](https://towardsdatascience.com/the-beauty-of-column-oriented-data-2945c0c9f560)
