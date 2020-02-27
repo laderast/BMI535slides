@@ -183,6 +183,12 @@ describe 'laderast:gtable'
 
 - If only one column family is busy with writes, only that column family accomulates memory. Be aware of write patterns when allocating resources.
 
+# Column Family Tips
+
+[From HBase Reference](http://hbase.apache.org/book.html):
+
+- HBase currently does not do well with anything above two or three column families so keep the number of column families in your schema low.
+
 # HBase versus Hive
 
 # Helpful Links
