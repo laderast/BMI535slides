@@ -53,12 +53,18 @@ A table is decomposed into *column families*, which you can think of as subtable
 
 A column family represents the basic unit for adding data.
 
-A column family is defined by a set of *columns* and a *key*. 
+A column family is defined as a key-value pair: *row key* and associated columns
+
+# Column Families and Relational Databases
+
+- Column families are analogous to single tables in a database structure
+- Each 
 
 # What's crazy about HBase
 
-The key can be anything, alphanumeric, integer, even other data structuures
-
+- The row key can be (almost) anything: 
+    - alphanumeric, integer, even other data structures
+    
 # 
 
 # 
@@ -126,5 +132,6 @@ describe 'laderast:gtable'
 
 # Helpful Links
 
+- [HBase Reference Guide](http://hbase.apache.org/book.html)
 - [Why column stores?](https://blog.pythian.com/why-column-stores/)
 - [The beauty of column oriented data](https://towardsdatascience.com/the-beauty-of-column-oriented-data-2945c0c9f560)
