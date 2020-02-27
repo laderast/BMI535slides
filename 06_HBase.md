@@ -1,12 +1,33 @@
+# What is HBase?
+
+- Column store database
+- Created as part of Apache project
+
 # Why use HBase?
 
+- Optimized for Querying
 - Storage and writing is very fast
+- Data is versioned
+- Your data can be sparse (not all rows will have the same column entries)
+- Data is sorted by row key
+
+# HBase is a little primitive
+
+Compared to Relational Databases, we often use *denormalized* data because it is faster to access
+
+# Versioning
+
+A *cell* not only contains a value, but also a *timestamp*. 
+
+Tables in HBase are versioned.
+
+# The architecture of HBase
 
 # Column Families
 
 # Setup
 
-Add to your `~/.bashrc`:
+Add these lines to your `~/.bashrc`:
 
 ```
 #this is where the hbase shell lives
@@ -33,6 +54,19 @@ hbase shell
 
 # Creating your own namespace
 
+A namespace is a place of your very own in the HBase database. It helps you avoid what are called *namespace* collisions.
 
+One example of a *namespace collision* is if multiple users tried to create a table called `Gene` in the main workspace. There would be lots of errors.
+
+So you can create your own namespace in HBase by running
 
 ```
+create_namespace laderast
+```
+
+# Creating an HBase Table
+
+
+
+# HBase versus Hive
+
