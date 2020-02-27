@@ -59,22 +59,22 @@ A column family is defined as a key-value pair: *row key* and associated columns
 
 A column family represents the basic unit for adding data. 
 
-You make a column family by thinking about what columns should go together.
+You make a column family by thinking about what columns should go together to speed up your query.
 
-Example:
+# Example
 
-Customer Table
+We have a customer database where we need to quickly identify everyone in a zip code.
 
+## Customer Table
+- row key: zipcode-address
+
+### Customer Info Column Family:
 - Customer ID
-
-Customer Info Family
-key: Customer Id
 - Customer Name
 - Age
 - Honorific
 
-Address Column Family:
-key: Zipcode
+### Address Column Family:
 - Address
 - City
 - State
@@ -82,7 +82,7 @@ key: Zipcode
 # Column Families and Relational Databases
 
 - Column families are analogous to single tables in a relational database structure
-- Each row key and tuple is analogous to a *row* in a relational database
+- Each row key and tuple in a column family is analogous to a *row* in a relational database
 
 # The Row Key is everything
 
@@ -92,20 +92,15 @@ Pick it carefully according to the queries you want to make.
 
 # Example of a Row Key
 
-Say we want to 
-
-Table of websites and information
-    - row key: domain 
+Why is `zipcode-address` used in our example?
 
 # What's crazy about HBase
 
 - The row key can be (almost) anything: 
     - alphanumeric, integer, even other data structures
-    
+- Again, choose it carefully, because it determines performance
 
-# 
-
-# Setup
+# Setup on `state`
 
 Add these lines to your `~/.bashrc`:
 
@@ -132,7 +127,7 @@ Once you have the above setup, you can open the HBase Shell by running:
 hbase shell
 ```
 
-# Listing what exists
+# `list`ing what exists
 
 ```
 list
@@ -158,11 +153,19 @@ So, create your own namespace (use your username)!
 create 'laderast:gtable`
 ```
 
+# Adding a Column Family
+
+```
+create 'laderast:gtable', "gene"
+```
+
 # Describe
 
 ```
 describe 'laderast:gtable'
 ```
+
+#
 
 # HBase versus Hive
 
