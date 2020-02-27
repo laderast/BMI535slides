@@ -11,6 +11,10 @@
 - Your data can be sparse (not all rows will have the same column entries)
 - Data is sorted by row key
 
+# How is the Data Stored?
+
+HBase is made for distributed file systems, in particular, Hadoop.
+
 # HBase is a little primitive
 
 Compared to Relational Databases, we often use *denormalized* data because it is faster to access
