@@ -11,9 +11,11 @@
 
 - Optimized for Querying
     - Depending on the data, can be orders of magnitude faster than relational data
+- Binary search over data stored in a column is very fast
 
 # Why use HBase?
 
+- Your data is huge (millions -> billions of rows)
 - Data is versioned
 - Your data can be sparse (not all rows will have the same column entries)
 - Missing data doesn't take memory
@@ -50,6 +52,12 @@ Tables in HBase are versioned.
 A table is decomposed into *column families*, which you can think of as subtables within a larger table.
 
 A column family represents the basic unit for adding data.
+
+A column family is defined by a set of *columns* and a *key*. 
+
+# What's crazy about HBase
+
+The key can be anything, alphanumeric, integer, even other data structuures
 
 # 
 
