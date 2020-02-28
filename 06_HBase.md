@@ -108,7 +108,7 @@ Identify the row key, the column families, and the columns in the following tabl
 <td></td>
 <td></td>
 <td>Gene ID</td>
-<td>GeneSym</td>
+<td>GeneName</td>
 <td>Biotype</td>
 <td>Transcript ID</td>
 <td>Chr</td>
@@ -173,6 +173,10 @@ This partitioning of the table into *regions* allows for faster access.
     - alphanumeric, integer, even other data structures
 - Again, choose it carefully, because it determines performance 
 
+## A Hadoop Use Case
+
+[Apache HBase: Overview and Use Cases](https://events.static.linuxfound.org/sites/events/files/slides/ApacheBigData2016.pdf) (go to slide 31)
+
 ## Setup on `state`
 
 Add these lines to your `~/.bashrc`:
@@ -236,9 +240,15 @@ describe 'laderast:Transcript'
 
 ## Data Manipulation Verbs in HBase
 
+[HBase Shell Command Reference](https://www.guru99.com/hbase-shell-general-commands.html)
+
 - `put` - Insert Data into Table by row key
 - `get` - retrieve row by row key
 - `scan` - search by row_key or field
+
+## Let's look at the columns and families
+
+`scan 'laderast:Transcript'`
 
 ## `get`ing data from a table
 
@@ -251,7 +261,11 @@ get 'laderast:Transcript', 'TSPAN6-202'
 ```
 
 ```
-get 'laderast:Transcript', 'TSPAN6-202', {}
+get 'laderast:Transcript', 'TSPAN6-202', {COLUMN => ['Transcript Information: Start', 'Gene Information: GeneName']}
+```
+
+```
+get 'laderast:Transcript', 'TSPAN6-202', {LIMIT => 2, COLUMN => ['Transcript Information: Start', 'Gene Information: Gene Name']}
 ```
 
 ## `scan`ning a table
@@ -261,16 +275,12 @@ scan <table>, {attributes => ‘value’}
 ```
 
 ```
-scan 'laderast:Transcript', {'Transcript}
+scan 'laderast:Transcript', {FILTER =>  "ValueFilter(=,'X')" }
 ```
 
-## Useful attributes for `scan`
+## Useful filters for `scan`
 
-COLUMNS => 'personal_data:name', 
-LIMIT => 10, 
-STARTROW => '3'
-TIMESTAMP => 
-
+https://acadgild.com/blog/different-types-of-filters-in-hbase-shell
 
 ## 'put'ing data into `laderast:Transcript`
 
@@ -304,6 +314,17 @@ In bash (you can use `exit` to get out of `hbase shell`):
 hbase shell transcript.txt
 ```
 
+4. Verify that you added your data using 
+
+`scan 'laderast:Transcript'`
+
+5. Read the 
+
+# Regions and Hadoop Architecture
+
+One valuable operation is to divide the data by key and distribute it to nodes by `regions`.
+
+Again, proximity counts and locating the data to be close to where it is needed is a large part of the speedup.
 
 # Table Design Rules of Thumb
 
@@ -337,7 +358,6 @@ hbase shell transcript.txt
 
 - https://www.nitrc.org/forum/message.php?msg_id=21408
 = https://www.hindawi.com/journals/cmmm/2017/6120820/
-
 
 # Helpful Links
 
