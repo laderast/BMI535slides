@@ -1,13 +1,15 @@
-# What is HBase?
+# An Introduction to Column Store Databases
+
+## What is HBase?
 
 - Column store database
 - Created as part of Apache project
 
-# What is a column store database?
+## What is a column store database?
 
 A database technology that focuses on the columns of the data, not the rows.
 
-# Glossary of Terms
+## Glossary of Terms
 
 From https://www.bmc.com/blogs/hadoop-hbase/
 
@@ -38,13 +40,13 @@ From https://www.bmc.com/blogs/hadoop-hbase/
 - **Row Key** - The row key is whatever you store in the row key column. So it’s not just an ordinal number. 
 - **Cell** - Google says that HBase is a “sparse, consistent, distributed, multidimensional, sorted map.” Data is stored as this map ((rowkey, column family, column, timestamp) -> value). So you can say that a cell is a column value. That’s not the exact technical definition but an easy way to think about it.
 
-# Why use HBase?
+## Why use HBase?
 
 - Optimized for Querying
     - Depending on the data, can be orders of magnitude faster than relational data
 - Binary search over data stored in a column is very fast
 
-# Why use HBase?
+## Why use HBase?
 
 - Your users are distributed over a large network 
     - HDFS allows for distributed (sharded) storage
@@ -53,17 +55,17 @@ From https://www.bmc.com/blogs/hadoop-hbase/
 - Your data can be sparse (not all rows will have the same column entries)
 - Data is sorted by row key
 
-# Number one use case
+## Number one use case
 
 Facebook messenger: https://www.facebook.com/notes/facebook-engineering/the-underlying-technology-of-messages/454991608919/
 
 Allows for fast retrieval of messages by timestamp
 
-# Sparsity
+## Sparsity
 
 Unlike relational databases, NULL values do not take up space.
 
-# How is the Data Stored?
+## How is the Data Stored?
 
 <table cellpadding="1">
 <tbody>
@@ -90,7 +92,7 @@ Unlike relational databases, NULL values do not take up space.
 - Sorting is critical for fast search and access
 - HBase is made for distributed file systems, in particular, Hadoop.
 
-# Your Turn
+## Your Turn
 
 Identify the row key, the column families, and the columns in the following table:
 
@@ -111,72 +113,55 @@ Identify the row key, the column families, and the columns in the following tabl
 <td></td>
 <td>Column 4</td>
 <td>Column 4</td>
+<td>Column 4</td>
 </tr>
 </tbody>
 </table>
 
-# HBase is a little primitive
+## HBase is a little primitive
 
 Compared to Relational Databases, we often use *denormalized* data because it is faster to access.
 
-# Versioning
+## Versioning
 
 A *cell* not only contains a value, but also a *timestamp*. 
 
 Depending on the number of previous versions you store, you may be able to roll back a cell.
 
-# Column Families
+## Column Families
 
 An HBase table is decomposed into *column families*, which you can think of as subtables within a larger table.
 
-A column family is defined as a key-value pair: *row key* and associated columns
+A *column family* is defined as a key-value pair: *row key* and associated columns
 
 A column family represents the basic unit for adding data. 
 
+## How to design column families
+
 You make a column family by thinking about what columns should go together to speed up your query.
 
-# Example
+## Example
 
 - row key: chromosome-start position
 
-We have a customer database where we need to quickly identify everyone in a zip code.
-
-## Customer Table
-- row key: zipcode-address
-
-### Customer Info Column Family:
-- Customer ID
-- Customer Name
-- Age
-- Honorific
-
-### Address Column Family:
-- Address
-- City
-- State
-
-# Column Families and Relational Databases
+## Column Families and Relational Databases
 
 - Column families are analogous to single tables in a relational database structure
 - Each row key and tuple in a column family is analogous to a *row* in a relational database
 
-# The Row Key is everything
+## The Row Key is everything
 
 The row key determines the position of a row in the database.
 
 Pick it carefully according to the queries you want to make.
 
-# Example of a Row Key
-
-Why is `zipcode-address` used in our example?
-
-# What's crazy about HBase
+## What's crazy about HBase
 
 - The row key can be (almost) anything: 
     - alphanumeric, integer, even other data structures
-- Again, choose it carefully, because it determines performance
+- Again, choose it carefully, because it determines performance 
 
-# Setup on `state`
+## Setup on `state`
 
 Add these lines to your `~/.bashrc`:
 
@@ -195,7 +180,7 @@ Remember to
 source ~/.bashrc
 ```
 
-# Opening up the HBase Shell
+## Opening up the HBase Shell
 
 Once you have the above setup, you can open the HBase Shell by running:
 
@@ -203,15 +188,15 @@ Once you have the above setup, you can open the HBase Shell by running:
 hbase shell
 ```
 
-# `list`ing what exists
+## `list`ing what exists
 
 ```
 list
 ```
 
-# Creating your own namespace
+## Creating your own namespace
 
-A namespace is a place of your very own in the HBase database. It helps you avoid what are called *namespace* collisions.
+A *namespace* is a place of your very own in the HBase database. It helps you avoid what are called *namespace* collisions.
 
 One example of a *namespace collision* is if multiple users tried to create a table called `Gene` in the main workspace. There would be lots of errors, especially if the table structure was different.
 
@@ -223,13 +208,24 @@ create_namespace laderast
 
 So, create your own namespace (use your username)!
 
-# Creating an HBase Table / Column Family
+## Creating an HBase Table / Column Family
 
 If the table doesn't exist, you have to create both at once.
 
 ```
 create 'laderast:gtable', "gene_info"
 ```
+
+## Data Manipulation Verbs in HBase
+
+- `put` - Insert Data into Table by row key
+- `get` - retrieve row by row key
+- `scan` - search by row_key or field
+
+
+
+- disable
+- drop
 
 # 'put'ing data into `laderast:gtable`
 
@@ -241,13 +237,7 @@ create 'laderast:gtable', "gene_info"
 describe 'laderast:gtable'
 ```
 
-# Data Manipulation Verbs in HBase
-
-- put
-- get
-- scan
-- disable
-- drop
+# 
 
 
 # Table Design Rules of Thumb
@@ -278,8 +268,8 @@ describe 'laderast:gtable'
 
 # HBase in Bioinformatics and Clinical Informatics
 
-https://www.nitrc.org/forum/message.php?msg_id=21408
-https://www.hindawi.com/journals/cmmm/2017/6120820/
+- https://www.nitrc.org/forum/message.php?msg_id=21408
+= https://www.hindawi.com/journals/cmmm/2017/6120820/
 
 
 # Helpful Links
