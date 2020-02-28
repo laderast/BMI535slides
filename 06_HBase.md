@@ -177,6 +177,15 @@ create 'laderast:gtable', "gene_info"
 describe 'laderast:gtable'
 ```
 
+# Data Manipulation Verbs in HBase
+
+- put
+- get
+- scan
+- disable
+- drop
+
+
 # Table Design Rules of Thumb
 
 [From HBase Reference](http://hbase.apache.org/book.html): 
