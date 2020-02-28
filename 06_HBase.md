@@ -216,7 +216,13 @@ So, create your own namespace (use your username)!
 If the table doesn't exist, you have to create both at once.
 
 ```
-create 'laderast:gtable', "gene_info"
+create 'laderast:Transcript', 'Gene Information', 'Transcript Information'
+```
+
+# What did we just do?
+
+```
+describe 'laderast:Transcript'
 ```
 
 ## Data Manipulation Verbs in HBase
@@ -225,19 +231,21 @@ create 'laderast:gtable', "gene_info"
 - `get` - retrieve row by row key
 - `scan` - search by row_key or field
 
-## 'put'ing data into `laderast:gtable`
+## 'put'ing data into `laderast:Transcript`
 
 
 ```
-put <'tablename'>,<'rowname'>,<'columnvalue'>,<'value'>
+put <'tablename'>,<'rowname'>,<'column_family:column'>,<'value'>
 ```
 ```
-put 'laderast:gtable', 
+put 'laderast:Transcript', 'TSPAN6-201' , 'Gene Information: GeneId', 'ENSG00000000003'
+put 'laderast:Transcript', 'TSPAN6-201' , 'Gene Information: GeneName', 'TSPAN6'
+put 'laderast:Transcript', 'TSPAN6-201' , 'Transcript Information: TranscriptID', 'ENST00000373000'
 ```
 
 ## Your turn
 
-Add the following data into your own `gtable`:
+Add the following data into your own `Transcript` table:
 
 
 
