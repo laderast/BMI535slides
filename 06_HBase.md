@@ -59,7 +59,7 @@ From https://www.bmc.com/blogs/hadoop-hbase/
 
 Facebook messenger: https://www.facebook.com/notes/facebook-engineering/the-underlying-technology-of-messages/454991608919/
 
-Allows for fast retrieval of messages by timestamp
+Allows for fast retrieval of messages by timestamp and friends
 
 ## Sparsity
 
