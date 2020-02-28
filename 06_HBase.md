@@ -104,7 +104,7 @@ Identify the row key, the column families, and the columns in the following tabl
 <td>Transcript Name</td>
 <td>TimeStamp</td>
 <td colspan="3">Gene Information</td>
-<td colspan="5">Transcript</td>
+<td colspan="6">Transcript</td>
 </tr>
 <tr>
 <td></td>
