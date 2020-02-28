@@ -244,6 +244,8 @@ describe 'laderast:Transcript'
 
 ## `get`ing data from a table
 
+get data by row key.
+
 ```
 get <'tablename'>, <'row key'>, {< Additional parameters>}
 ```
@@ -262,12 +264,18 @@ get 'laderast:Transcript', 'TSPAN6-202', {LIMIT => 2, COLUMN => ['Transcript Inf
 
 ## `scan`ning a table
 
+Search within cells
+
 ```
 scan <table>, {attributes => ‘value’}
 ```
 
 ```
-scan 'laderast:Transcript', {FILTER =>  "ValueFilter(=,'X')" }
+scan 'laderast:Transcript', {COLUMN => 'Transcript Information: Chr', FILTER =>  "ValueFilter(=,'binaryprefix:X')" }
+```
+
+```
+scan 'laderast:Transcript', {FILTER =>  "ValueFilter(=,'binaryprefix:TSPAN6')" }
 ```
 
 ## Useful filters for `scan`
@@ -275,7 +283,6 @@ scan 'laderast:Transcript', {FILTER =>  "ValueFilter(=,'X')" }
 https://acadgild.com/blog/different-types-of-filters-in-hbase-shell
 
 ## 'put'ing data into `laderast:Transcript`
-
 
 ```
 put <'tablename'>,<'rowname'>,<'column_family:column'>,<'value'>
@@ -294,7 +301,11 @@ scan 'laderast:Transcript'
 
 ## Your turn
 
-Add the following data into your own `laderast:Transcript` table:
+Add the above data into your own `userid:Transcript` table.
+
+Confirm that your load works with `scan`.
+
+## Load from the command line
 
 In bash (you can use `exit` to get out of `hbase shell`):
 
