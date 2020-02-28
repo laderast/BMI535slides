@@ -79,6 +79,8 @@ You make a column family by thinking about what columns should go together to sp
 
 # Example
 
+- row key: chromosome-start position
+
 We have a customer database where we need to quickly identify everyone in a zip code.
 
 ## Customer Table
