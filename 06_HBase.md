@@ -254,6 +254,12 @@ get <'tablename'>, <'rowname'>, {< Additional parameters>}
 ```
 scan <table>, {attributes => ‘value’}
 ```
+## Useful attributes for `scan`
+
+COLUMNS => 'personal_data:name', 
+LIMIT => 10, 
+STARTROW => '3'
+TIMESTAMP => 
 
 # Table Design Rules of Thumb
 
@@ -281,6 +287,8 @@ scan <table>, {attributes => ‘value’}
 
 # HBase versus Hive
 
+- https://www.xplenty.com/blog/hive-vs-hbase/
+
 # HBase in Bioinformatics and Clinical Informatics
 
 - https://www.nitrc.org/forum/message.php?msg_id=21408
@@ -288,9 +296,12 @@ scan <table>, {attributes => ‘value’}
 
 
 # Helpful Links
-- https://www.xplenty.com/blog/hive-vs-hbase/
-- https://events.static.linuxfound.org/sites/events/files/slides/ApacheBigData2016.pdf
+
 - [Understanding HBase and BigTable](https://dzone.com/articles/understanding-hbase-and-bigtab)
+- [Apache HBase: Overview and Use Cases](https://events.static.linuxfound.org/sites/events/files/slides/ApacheBigData2016.pdf)
+
+
+- https://www.slideshare.net/HBaseCon/case-studies-session-7
 - [HBase Beginners Guide](https://acadgild.com/blog/hbase-tutorial-beginners-guide)
 - [HBase Reference Guide](http://hbase.apache.org/book.html), especially [HBase Data Model](http://hbase.apache.org/book.html#datamodel)
 - [Why column stores?](https://blog.pythian.com/why-column-stores/)
