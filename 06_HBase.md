@@ -7,7 +7,9 @@
 
 ## What is a column store database?
 
-A database technology that focuses on the columns of the data, not the rows.
+- A database technology that focuses on the columns of the data, not the rows.
+- Data storage focuses on columns
+- Proximity of data is meaningful
 
 ## Glossary of Terms
 
