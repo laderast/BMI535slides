@@ -33,6 +33,10 @@ From https://www.bmc.com/blogs/hadoop-hbase/
 - Missing data doesn't take memory
 - Data is sorted by row key
 
+# Number one use case
+
+Facebook timeline 
+
 # Sparsity
 
 Unlike relational databases, NULL values do not take up space.
