@@ -7,6 +7,18 @@
 
 
 
+# Glossary of Terms
+
+From https://www.bmc.com/blogs/hadoop-hbase/
+
+- **Table** a collection of rows.
+- **Row** a collection of column families.
+- **Column Family** a collection of columns. HBase stores data by column family and not row. This makes for faster retrieval of columns since they are located near each other.
+- **Column** individual data items, like product price. For example, in a system designed to store product information you could have a column family called characteristics and then another called inventory. Characteristics could contain the columns description, manufacturer, and serial number. Inventory could include itemCount, SKU (stock keeping unit), EAN (barcode Europe), and UPC (barcode USA). You reference the columns like this characteristics:itemCount.
+- **Timestamp** HBase indexes row keys, columns, and timestamp. The timestamp can be any time format including simple integers which are not time at all. Because timestamp is part of the key, you can have duplicate rows. That means you can have multiple versions of a row. For example you could have an accounting transaction at time n and the same information at some other time.
+- **Row Key** The row key is whatever you store in the row key column. So it’s not just an ordinal number. In this example, we use product number. You do not give the row key a name, like productNumber, like you do with columns. HBase keeps row keys in alphabetical order so that similar items are kept next to each other. For example, in the Google documentation that explains Google Big Table they use the example of their web index. Data for abc.com is kept next to sales.abc.com. (In other to store those next to each other Google stores those domain names backwards like com.abc and com.abc.sales.)
+- **Cell** Technically HBase stores data in maps. Python, Scala, and Java programmers know that a map is a (key->value) data structure, with no duplicate keys allowed. Google says that HBase is a “sparse, consistent, distributed, multidimensional, sorted map.” Data is stored as this map ((rowkey, column family, column, timestamp) -> value). So you can say that a cell is a column value.That’s not the exact technical definition but an easy way to think about it.
+
 # Why use HBase?
 
 - Optimized for Querying
