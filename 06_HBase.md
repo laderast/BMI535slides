@@ -99,21 +99,24 @@ Identify the row key, the column families, and the columns in the following tabl
 <table cellpadding="1">
 <tbody>
 <tr>
-<td>Transcript ID</td>
+<td>Transcript Name</td>
 <td>TimeStamp</td>
 <td colspan="3">Gene Information</td>
-<td colspan="3">Transcript</td>
+<td colspan="5">Transcript</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td>Gene Symbol</td>
-<td>Gene Start</td>
-<td>Gene End</td>
+<td>Gene ID</td>
+<td>GeneSym</td>
+<td>Biotype</td>
 <td></td>
-<td>Column 4</td>
-<td>Column 4</td>
-<td>Column 4</td>
+<td>Transcript ID</td>
+<td>Chr</td>
+<td>Start</td>
+<td>End</td>
+<td>Start</td>
+<td>Strand</td>
 </tr>
 </tbody>
 </table>
@@ -223,6 +226,7 @@ create 'laderast:gtable', "gene_info"
 - `scan` - search by row_key or field
 
 ## 'put'ing data into `laderast:gtable`
+
 
 ```
 put <'tablename'>,<'rowname'>,<'columnvalue'>,<'value'>
