@@ -5,19 +5,38 @@
 
 # What is a column store database?
 
-
+A database technology that focuses on the columns of the data, not the rows.
 
 # Glossary of Terms
 
 From https://www.bmc.com/blogs/hadoop-hbase/
 
-- **Table** a collection of rows.
-- **Row** a collection of column families.
-- **Column Family** a collection of columns. HBase stores data by column family and not row. This makes for faster retrieval of columns since they are located near each other.
-- **Column** individual data items, like product price. For example, in a system designed to store product information you could have a column family called characteristics and then another called inventory. Characteristics could contain the columns description, manufacturer, and serial number. Inventory could include itemCount, SKU (stock keeping unit), EAN (barcode Europe), and UPC (barcode USA). You reference the columns like this characteristics:itemCount.
+<table cellpadding="1">
+<tbody>
+<tr>
+<td>Row Key</td>
+<td>TimeStamp</td>
+<td colspan="2">Column Family</td>
+<td colspan="2">Column Family</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Column 1</td>
+<td>Column 2</td>
+<td>Column 3</td>
+<td>Column 4</td>
+</tr>
+</tbody>
+</table>
+
+- **Table** - a collection of rows.
+- **Row** - a collection of column families.
+- **Column Family** - a collection of columns. HBase stores data by column family and not row. This makes for faster retrieval of columns since they are located near each other.
+- **Column** - individual data items, like product price. 
 - **Timestamp** HBase indexes row keys, columns, and timestamp. The timestamp can be any time format including simple integers which are not time at all. Because timestamp is part of the key, you can have duplicate rows. That means you can have multiple versions of a row. For example you could have an accounting transaction at time n and the same information at some other time.
-- **Row Key** The row key is whatever you store in the row key column. So it’s not just an ordinal number. In this example, we use product number. You do not give the row key a name, like productNumber, like you do with columns. HBase keeps row keys in alphabetical order so that similar items are kept next to each other. For example, in the Google documentation that explains Google Big Table they use the example of their web index. Data for abc.com is kept next to sales.abc.com. (In other to store those next to each other Google stores those domain names backwards like com.abc and com.abc.sales.)
-- **Cell** Technically HBase stores data in maps. Python, Scala, and Java programmers know that a map is a (key->value) data structure, with no duplicate keys allowed. Google says that HBase is a “sparse, consistent, distributed, multidimensional, sorted map.” Data is stored as this map ((rowkey, column family, column, timestamp) -> value). So you can say that a cell is a column value.That’s not the exact technical definition but an easy way to think about it.
+- **Row Key** - The row key is whatever you store in the row key column. So it’s not just an ordinal number. 
+- **Cell** - Google says that HBase is a “sparse, consistent, distributed, multidimensional, sorted map.” Data is stored as this map ((rowkey, column family, column, timestamp) -> value). So you can say that a cell is a column value. That’s not the exact technical definition but an easy way to think about it.
 
 # Why use HBase?
 
@@ -27,15 +46,23 @@ From https://www.bmc.com/blogs/hadoop-hbase/
 
 # Why use HBase?
 
+- Your users are distributed over a large network 
+    - HDFS allows for distributed (sharded) storage
+    - load balancing of access
 - Your data is huge (millions -> billions of rows)
-- Data is versioned
 - Your data can be sparse (not all rows will have the same column entries)
-- Missing data doesn't take memory
 - Data is sorted by row key
 
 # Number one use case
 
-Facebook timeline 
+Facebook messenger: https://www.facebook.com/notes/facebook-engineering/the-underlying-technology-of-messages/454991608919/
+
+Allows for fast retrieval of messages by timestamp
+
+# HBase in Bioinformatics and Clinical Informatics
+
+https://www.nitrc.org/forum/message.php?msg_id=21408
+https://www.hindawi.com/journals/cmmm/2017/6120820/
 
 # Sparsity
 
@@ -49,7 +76,28 @@ Data is usually bulk loaded.
 
 # How is the Data Stored?
 
-- Data is *sorted and stored* as a sorted data structure
+<table cellpadding="1">
+<tbody>
+<tr>
+<td>Row Key</td>
+<td>TimeStamp</td>
+<td colspan="2">Column Family</td>
+<td colspan="2">Column Family</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Column 1</td>
+<td>Column 2</td>
+<td>Column 3</td>
+<td>Column 4</td>
+</tr>
+</tbody>
+</table>
+
+- Data is *sorted and stored* as a sorted data structure (a map)
+    - To get the value of a cell, you need this information
+        (rowkey, column family, column, timestamp)
 - Sorting is critical for fast search and access
 - HBase is made for distributed file systems, in particular, Hadoop.
 
@@ -61,15 +109,11 @@ Compared to Relational Databases, we often use *denormalized* data because it is
 
 A *cell* not only contains a value, but also a *timestamp*. 
 
-Tables in HBase are versioned.
-
-# The architecture of HBase
-
-
+Depending on the number of previous versions you store, you may be able to roll back a cell.
 
 # Column Families
 
-A table is decomposed into *column families*, which you can think of as subtables within a larger table.
+An HBase table is decomposed into *column families*, which you can think of as subtables within a larger table.
 
 A column family is defined as a key-value pair: *row key* and associated columns
 
