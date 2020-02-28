@@ -59,11 +59,6 @@ Facebook messenger: https://www.facebook.com/notes/facebook-engineering/the-unde
 
 Allows for fast retrieval of messages by timestamp
 
-# HBase in Bioinformatics and Clinical Informatics
-
-https://www.nitrc.org/forum/message.php?msg_id=21408
-https://www.hindawi.com/journals/cmmm/2017/6120820/
-
 # Sparsity
 
 Unlike relational databases, NULL values do not take up space.
@@ -100,6 +95,31 @@ Data is usually bulk loaded.
         (rowkey, column family, column, timestamp)
 - Sorting is critical for fast search and access
 - HBase is made for distributed file systems, in particular, Hadoop.
+
+# Your Turn
+
+Identify the row key, the column families, and the columns in the following table:
+
+<table cellpadding="1">
+<tbody>
+<tr>
+<td>Transcript ID</td>
+<td>TimeStamp</td>
+<td colspan="3">Gene Information</td>
+<td colspan="3">Transcript</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Gene Symbol</td>
+<td>Gene Start</td>
+<td>Gene End</td>
+<td></td>
+<td>Column 4</td>
+<td>Column 4</td>
+</tr>
+</tbody>
+</table>
 
 # HBase is a little primitive
 
@@ -261,6 +281,12 @@ describe 'laderast:gtable'
 - HBase currently does not do well with anything above two or three column families so keep the number of column families in your schema low.
 
 # HBase versus Hive
+
+# HBase in Bioinformatics and Clinical Informatics
+
+https://www.nitrc.org/forum/message.php?msg_id=21408
+https://www.hindawi.com/journals/cmmm/2017/6120820/
+
 
 # Helpful Links
 - https://www.xplenty.com/blog/hive-vs-hbase/
