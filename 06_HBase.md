@@ -240,14 +240,18 @@ describe 'laderast:Transcript'
 - `get` - retrieve row by row key
 - `scan` - search by row_key or field
 
-
-
 ## `get`ing data from a table
 
-
+```
+get <'tablename'>, <'row key'>, {< Additional parameters>}
+```
 
 ```
-get <'tablename'>, <'rowname'>, {< Additional parameters>}
+get 'laderast:Transcript', 'TSPAN6-202'
+```
+
+```
+get 'laderast:Transcript', 'TSPAN6-202', {}
 ```
 
 ## `scan`ning a table
@@ -255,6 +259,11 @@ get <'tablename'>, <'rowname'>, {< Additional parameters>}
 ```
 scan <table>, {attributes => ‘value’}
 ```
+
+```
+scan 'laderast:Transcript', {'Transcript}
+```
+
 ## Useful attributes for `scan`
 
 COLUMNS => 'personal_data:name', 
