@@ -110,7 +110,6 @@ Identify the row key, the column families, and the columns in the following tabl
 <td>Gene ID</td>
 <td>GeneSym</td>
 <td>Biotype</td>
-<td></td>
 <td>Transcript ID</td>
 <td>Chr</td>
 <td>Start</td>
@@ -231,31 +230,11 @@ describe 'laderast:Transcript'
 - `get` - retrieve row by row key
 - `scan` - search by row_key or field
 
-## 'put'ing data into `laderast:Transcript`
 
-
-```
-put <'tablename'>,<'rowname'>,<'column_family:column'>,<'value'>
-```
-```
-put 'laderast:Transcript', 'TSPAN6-201' , 'Gene Information: GeneId', 'ENSG00000000003'
-put 'laderast:Transcript', 'TSPAN6-201' , 'Gene Information: GeneName', 'TSPAN6'
-put 'laderast:Transcript', 'TSPAN6-201' , 'Transcript Information: TranscriptID', 'ENST00000373000'
-```
-
-## Your turn
-
-Add the following data into your own `Transcript` table:
-
-
-
-## Describe
-
-```
-describe 'laderast:gtable'
-```
 
 ## `get`ing data from a table
+
+
 
 ```
 get <'tablename'>, <'rowname'>, {< Additional parameters>}
@@ -272,6 +251,40 @@ COLUMNS => 'personal_data:name',
 LIMIT => 10, 
 STARTROW => '3'
 TIMESTAMP => 
+
+
+## 'put'ing data into `laderast:Transcript`
+
+
+```
+put <'tablename'>,<'rowname'>,<'column_family:column'>,<'value'>
+```
+```
+put 'laderast:Transcript', 'TSPAN6-201' , 'Gene Information: GeneId', 'ENSG00000000003'
+put 'laderast:Transcript', 'TSPAN6-201' , 'Gene Information: GeneName', 'TSPAN6'
+put 'laderast:Transcript', 'TSPAN6-201' , 'Transcript Information: TranscriptID', 'ENST00000373000'
+```
+
+Check that we did something:
+
+```
+scan 'laderast:Transcript'
+```
+
+## Your turn
+
+Add the following data into your own `laderast:Transcript` table:
+
+In bash (you can use `exit` to get out of `hbase shell`):
+
+1. look in `/home/courses/BMI535/students/hbase/transcript.txt` - copy this file to your own directory
+2. You'll need to modify the `Transcript` table name to fit your own namespace. Hint: search and replace.
+3. When you're done, try running: 
+
+```
+hbase shell transcript.txt
+```
+
 
 # Table Design Rules of Thumb
 
