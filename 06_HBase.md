@@ -222,12 +222,18 @@ create 'laderast:gtable', "gene_info"
 - `get` - retrieve row by row key
 - `scan` - search by row_key or field
 
-
-
-- disable
-- drop
-
 # 'put'ing data into `laderast:gtable`
+
+```
+put <'tablename'>,<'rowname'>,<'columnvalue'>,<'value'>
+```
+```
+put 'laderast:gtable', 
+```
+
+# Your turn
+
+Add the following data into your own `gtable`:
 
 
 
@@ -237,8 +243,11 @@ create 'laderast:gtable', "gene_info"
 describe 'laderast:gtable'
 ```
 
-# 
+# `get`ing data from a table
 
+```
+get <'tablename'>, <'rowname'>, {< Additional parameters>}
+```
 
 # Table Design Rules of Thumb
 
