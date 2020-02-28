@@ -252,6 +252,7 @@ get <'tablename'>, <'rowname'>, {< Additional parameters>}
 ## `scan`ning a table
 
 ```
+scan <table>, {attributes => ‘value’}
 ```
 
 # Table Design Rules of Thumb
