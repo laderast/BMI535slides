@@ -138,14 +138,6 @@ A *column family* is defined as a key-value pair: *row key* and associated colum
 
 A column family represents the basic unit for adding data. 
 
-## How to design column families
-
-You make a column family by thinking about what columns should go together to speed up your query.
-
-## Example
-
-- row key: chromosome-start position
-
 ## Column Families and Relational Databases
 
 - Column families are analogous to single tables in a relational database structure
@@ -153,7 +145,7 @@ You make a column family by thinking about what columns should go together to sp
 
 ## The Row Key is everything
 
-The row key determines the position of a row in the database.
+The row key determines the position of a row in the database, and potentially where it is stored.
 
 Pick it carefully according to the queries you want to make.
 
@@ -318,7 +310,11 @@ hbase shell transcript.txt
 
 `scan 'laderast:Transcript'`
 
-5. Read the 
+## One Table Schema Does not Fit all queries
+
+What about queries that needed to aggregate by gene? 
+
+How would you structure the `Transcript Info` to fit the info into a single row?
 
 # Regions and Hadoop Architecture
 
