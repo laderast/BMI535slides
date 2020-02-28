@@ -63,12 +63,6 @@ Allows for fast retrieval of messages by timestamp
 
 Unlike relational databases, NULL values do not take up space.
 
-# How is the Data Loaded?
-
-HBase is not optimized for constant table updates.
-
-Data is usually bulk loaded.
-
 # How is the Data Stored?
 
 <table cellpadding="1">
