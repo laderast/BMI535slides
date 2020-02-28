@@ -157,6 +157,16 @@ The row key determines the position of a row in the database.
 
 Pick it carefully according to the queries you want to make.
 
+## The row key determines how data is distributed
+
+For distributed systems, the row key is usually by geographic area
+
+This is because it allows data to be located in hadoop nodes closer to where it's accessed.
+
+For example, a facebook messenger user that is in one area probably has their data situated in a data center nearest to them.
+
+This partitioning of the table into *regions* allows for faster access.
+
 ## What's crazy about HBase
 
 - The row key can be (almost) anything: 
