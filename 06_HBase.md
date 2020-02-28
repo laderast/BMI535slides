@@ -204,7 +204,7 @@ describe 'laderast:gtable'
 # HBase versus Hive
 
 # Helpful Links
-
+- https://events.static.linuxfound.org/sites/events/files/slides/ApacheBigData2016.pdf
 - [Understanding HBase and BigTable](https://dzone.com/articles/understanding-hbase-and-bigtab)
 - [HBase Beginners Guide](https://acadgild.com/blog/hbase-tutorial-beginners-guide)
 - [HBase Reference Guide](http://hbase.apache.org/book.html), especially [HBase Data Model](http://hbase.apache.org/book.html#datamodel)
