@@ -372,7 +372,7 @@ Again, proximity counts and locating the data to be close to where it is needed 
 
 - [Understanding HBase and BigTable](https://dzone.com/articles/understanding-hbase-and-bigtab)
 - [Apache HBase: Overview and Use Cases](https://events.static.linuxfound.org/sites/events/files/slides/ApacheBigData2016.pdf)
-
+- [Rowkey Design](https://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/rowkey.design.html)
 
 - https://www.slideshare.net/HBaseCon/case-studies-session-7
 - [HBase Beginners Guide](https://acadgild.com/blog/hbase-tutorial-beginners-guide)
