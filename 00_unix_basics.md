@@ -40,3 +40,5 @@ echo $PATH
 
 ## Very Helpful: `tmux`
 
+# Dependencies Manager: `conda` and `miniconda`
+
