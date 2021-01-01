@@ -8,11 +8,11 @@ What is the absolute path to here? You can use `pwd` to find it.
 
 ## File Permissions
 
-
+`chmod`
 
 ## Finding Software
 
-
+`which R`
 
 
 ## Environment Variables
