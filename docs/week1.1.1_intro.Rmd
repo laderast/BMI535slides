@@ -1,7 +1,7 @@
 ---
 title: "Intro to Big Data and Command Line Review"
 subtitle: "BMI 535/635"
-author: "Ted Laderas and Christina Zheng"
+author: "Ted Laderas"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -53,11 +53,14 @@ class: center, middle
 - Useful Data Structures in R/Python for handling Big Data
 - High Performance Computing (HPC)
   - Exacloud and Amazon Web Services (AWS)
+- Workflows
+  - Docker 
 - Databases
   - Relational Databases
   - NoSQL Databases
 - Final Project
 ---
+
 # Grading
 
 - Assignments: 40%
@@ -65,9 +68,10 @@ class: center, middle
 - Final Project: 40%
 
 ---
-# Data is Being collected all the time
 
-- What are some kinds of big data?
+# Office Hours/Appointments
+
+Please contact us if you need to make an appointment
 
 ---
 # Big Data

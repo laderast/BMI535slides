@@ -1,8 +1,22 @@
 # Unix Basics
 
+## Connecting to `state`
+
+You will first need to connect through `acc.ohsu.edu`
+
+```
+ssh laderast@acc.ohsu.edu
+```
+
+Once you're in there:
+
+```
+ssh state
+```
+
 ## `pwd` - where am I?
 
-When you sign into your account, you'll be in your *home directory*
+When you sign into your account, you'll be in your *home directory* - this is a directory that houses your files
 
 What is the absolute path to here? You can use `pwd` to find it.
 
@@ -13,7 +27,6 @@ What is the absolute path to here? You can use `pwd` to find it.
 ## Finding Software
 
 `which R`
-
 
 ## Environment Variables
 
@@ -32,6 +45,7 @@ export PATH="$HOME/FastQC/:$PATH"
 ```
 
 ## Editing your `.bashrc` using `nano`
+
 
 
 
