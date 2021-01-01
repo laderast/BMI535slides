@@ -2,6 +2,18 @@
 
 ## `pwd` - where am I?
 
+When you sign into your account, you'll be in your *home directory*
+
+What is the absolute path to here? You can use `pwd` to find it.
+
+## File Permissions
+
+
+
+## Finding Software
+
+
+
 
 ## Environment Variables
 
@@ -15,13 +27,12 @@ echo $PATH
 
 ## Adding software to your `PATH` using a `.bashrc` file
 
-
+```
+export PATH="$HOME/FastQC/:$PATH"
+```
 
 ## Editing your `.bashrc` using `nano`
 
-
-
-## File Permissions
 
 
 ## `which`
