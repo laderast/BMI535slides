@@ -126,7 +126,7 @@ ps -u laderast
 Killing a job using `kill` (only works on your jobs)
 
 ```
-kill
+kill [jobnum]
 ```
 
 ## Very Helpful: `tmux`
