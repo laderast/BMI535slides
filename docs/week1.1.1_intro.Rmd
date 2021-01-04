@@ -18,25 +18,42 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE, echo=FALSE)
 library(xaringanthemer)
-library(xaringanthemer)
-mono_light(
+style_mono_accent(
   base_color = "midnightblue",
   header_font_google = google_font("Josefin Sans"),
-  text_font_google   = google_font("Montserrat", "300", "300i"),
-  code_font_google   = google_font("Droid Mono"),
-  link_color = "deepskyblue1",
-  text_font_size = "28px"
+  link_color = "steelblue",
+  text_font_size = "26px",
+  footnote_font_size = "22px"
 )
 ```
 
-
 ---
-class: center, middle
 
+class: center, middle
 # Welcome and Introduction
 
 ---
-# Skills Covered in this Course:
+class:center, middle
+# This is a Safe Space to Ask Questions
+
+---
+# Code of Conduct
+
+This class is governed by the [BioData Club Code of Conduct](https://biodata-club.github.io/code_of_conduct/).
+
+This class is meant to be a psychologically safe space where it's ok to ask questions.
+
+I want to normalize your own curiosity and fuel your desire to learn more.
+
+If you are disruptive to class learning or disparaging to other students, I may mute you for the day.
+
+---
+# Code of Conduct Violations
+
+Please report them here: 
+
+---
+# Learning Objectives
 
 1. **Utilize** alternative data storage and data structures to handle Big Datasets
 1. **Create**, **Normalize**, **Load** and **Query** Relational Databases
@@ -44,9 +61,11 @@ class: center, middle
 1. **Create** and **Run** jobs on High Performance Computing systems including Exacloud and Amazon Web Services
 1. **Understand** and **utilize** the map-reduce programming pattern
 1. **Reproduce**, **Implement**, **Debug**, and **Document** an established biomedical data workflow
+1. **Utilize** container-based workflows on a remote systems
 1. (BMI 635 only) **Design** and **Evaluate** the efficiency of parallelized analysis workflows
 
 ---
+
 # Structure of this Course
 
 - Command Line Review
@@ -54,7 +73,7 @@ class: center, middle
 - High Performance Computing (HPC)
   - Exacloud and Amazon Web Services (AWS)
 - Workflows
-  - Docker 
+  - Docker/GATK 
 - Databases
   - Relational Databases
   - NoSQL Databases
@@ -73,15 +92,24 @@ class: center, middle
 
 Please contact us if you need to make an appointment
 
+- laderast@ohsu.edu
+- mooneymi@ohsu.edu
+
 ---
-# Big Data
 
-Voluminous and complex datasets are being collected all the time! 
+# BMI 535 Slack
 
-We need approaches to using this data:
+https://bmi535.slack.com
 
-- capturing; storing; sharing
-- analyzing; querying; visualizing
+Invitations will be sent by email.
+
+Feel free to ask questions and answer them.
+
+---
+class: center, middle
+
+# Why Big Data?
+
 ---
 ```{r echo=FALSE}
 knitr::include_graphics("image/5V.png")
@@ -278,6 +306,36 @@ Be familiar with the following commands:
   - A little easier to learn
 
 ---
+# Scripting Configuration (chapter 14)
+
+- `$PATH` variable (where applications live, 14.8)
+- Environment variables (passwords and connections, 14.9)
+  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` (14.10)
+
+---
+# Let's Get onto State
+
+https://github.com/laderast/BMI535slides/blob/master/00_unix_basics.md
+
+---
+# Suggested Reading
+
+[The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
+
+Specifically:
+
+- [Course Overview and the Shell](https://missing.csail.mit.edu/2020/course-shell/)
+- [Command Line Environment](https://missing.csail.mit.edu/2020/command-line/)
+- [Shell Scripting](https://missing.csail.mit.edu/2020/shell-tools/)
+
+---
+
+# Optional Reading
+
+- [Editors: Vim](https://missing.csail.mit.edu/2020/editors/)
+- [Version Control: Git](https://missing.csail.mit.edu/2020/version-control/)
+
+---
 # Shell Scripting (Chapters 23-26)
 
 - How to set up a shell script
@@ -289,15 +347,7 @@ Be familiar with the following commands:
 - Know what a pipe `|` is and why it's useful
 
 ---
-# Scripting Configuration (chapter 14)
-
-- `$PATH` variable (where applications live, 14.8)
-- Environment variables (passwords and connections, 14.9)
-  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` (14.10)
-
----
 # Regular Expressions (Chapter 21)
 
 - Used to specify string matching queries
 - Highly flexible
-

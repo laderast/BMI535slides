@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Intro to Big Data and Command Line Review</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Ted Laderas and Christina Zheng" />
-    <meta name="date" content="2020-01-07" />
+    <meta name="author" content="Ted Laderas" />
+    <meta name="date" content="2021-01-04" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -13,8 +14,8 @@ class: center, middle, inverse, title-slide
 
 # Intro to Big Data and Command Line Review
 ## BMI 535/635
-### Ted Laderas and Christina Zheng
-### 2020-01-07
+### Ted Laderas
+### 2021-01-04
 
 ---
 
@@ -22,14 +23,33 @@ class: center, middle, inverse, title-slide
 
 
 
-
 ---
+
 class: center, middle
-
 # Welcome and Introduction
 
 ---
-# Skills Covered in this Course:
+class:center, middle
+# This is a Safe Space to Ask Questions
+
+---
+# Code of Conduct
+
+This class is governed by the [BioData Club Code of Conduct](https://biodata-club.github.io/code_of_conduct/).
+
+This class is meant to be a psychologically safe space where it's ok to ask questions.
+
+I want to normalize your own curiosity and fuel your desire to learn more.
+
+If you are disruptive to class learning or disparaging to other students, I may mute you for the day.
+
+---
+# Code of Conduct Violations
+
+Please report them here: 
+
+---
+# Learning Objectives
 
 1. **Utilize** alternative data storage and data structures to handle Big Datasets
 1. **Create**, **Normalize**, **Load** and **Query** Relational Databases
@@ -37,20 +57,25 @@ class: center, middle
 1. **Create** and **Run** jobs on High Performance Computing systems including Exacloud and Amazon Web Services
 1. **Understand** and **utilize** the map-reduce programming pattern
 1. **Reproduce**, **Implement**, **Debug**, and **Document** an established biomedical data workflow
+1. **Utilize** container-based workflows on a remote systems
 1. (BMI 635 only) **Design** and **Evaluate** the efficiency of parallelized analysis workflows
 
 ---
+
 # Structure of this Course
 
 - Command Line Review
 - Useful Data Structures in R/Python for handling Big Data
 - High Performance Computing (HPC)
   - Exacloud and Amazon Web Services (AWS)
+- Workflows
+  - Docker/GATK 
 - Databases
   - Relational Databases
   - NoSQL Databases
 - Final Project
 ---
+
 # Grading
 
 - Assignments: 40%
@@ -58,19 +83,29 @@ class: center, middle
 - Final Project: 40%
 
 ---
-# Data is Being collected all the time
 
-- What are some kinds of big data?
+# Office Hours/Appointments
+
+Please contact us if you need to make an appointment
+
+- laderast@ohsu.edu
+- mooneymi@ohsu.edu
 
 ---
-# Big Data
 
-Voluminous and complex datasets are being collected all the time! 
+# BMI 535 Slack
 
-We need approaches to using this data:
+https://bmi535.slack.com
 
-- capturing; storing; sharing
-- analyzing; querying; visualizing
+Invitations will be sent by email.
+
+Feel free to ask questions and answer them.
+
+---
+class: center, middle
+
+# Why Big Data?
+
 ---
 &lt;img src="image/5V.png" width="760" /&gt;
 ---
@@ -247,6 +282,36 @@ Be familiar with the following commands:
   - A little easier to learn
 
 ---
+# Scripting Configuration (chapter 14)
+
+- `$PATH` variable (where applications live, 14.8)
+- Environment variables (passwords and connections, 14.9)
+  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` (14.10)
+
+---
+# Let's Get onto State
+
+https://github.com/laderast/BMI535slides/blob/master/00_unix_basics.md
+
+---
+# Suggested Reading
+
+[The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
+
+Specifically:
+
+- [Course Overview and the Shell](https://missing.csail.mit.edu/2020/course-shell/)
+- [Command Line Environment](https://missing.csail.mit.edu/2020/command-line/)
+- [Shell Scripting](https://missing.csail.mit.edu/2020/shell-tools/)
+
+---
+
+# Optional Reading
+
+- [Editors: Vim](https://missing.csail.mit.edu/2020/editors/)
+- [Version Control: Git](https://missing.csail.mit.edu/2020/version-control/)
+
+---
 # Shell Scripting (Chapters 23-26)
 
 - How to set up a shell script
@@ -256,13 +321,6 @@ Be familiar with the following commands:
 # Pipes (Chapter 18)
 
 - Know what a pipe `|` is and why it's useful
-
----
-# Scripting Configuration (chapter 14)
-
-- `$PATH` variable (where applications live, 14.8)
-- Environment variables (passwords and connections, 14.9)
-  - using `.bash_profile` or `.bashrc` files to specify environment variables using `export` (14.10)
 
 ---
 # Regular Expressions (Chapter 21)
@@ -316,9 +374,25 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
-
-<script>
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
 (function() {
   var links = document.getElementsByTagName('a');
   for (var i = 0; i < links.length; i++) {
@@ -327,7 +401,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
   }
 })();
-</script>
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {
