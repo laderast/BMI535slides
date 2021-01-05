@@ -60,6 +60,7 @@ The one you should be familiar with is `$PATH`, which is a list of directories t
 
 ```
 echo $PATH
+echo $HOME
 ```
 
 ## Adding software to your `PATH` using a `.bashrc` file
@@ -157,6 +158,9 @@ kill [jobnum]
 ## Very Helpful: `tmux`
 
 # Dependencies Manager: `conda` and `miniconda`
+
+In general, `miniconda` is a good setup for installing software where you don't have permisison.
+
 
 ## (optional) HOSTNAME specific commands
 
