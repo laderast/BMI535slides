@@ -134,6 +134,8 @@ If you have installed a different version of R, you can create an *alias* in you
 
 `alias R2=/usr/bin/R`
 
+Try editing your `.bashrc` to add this line. Then, `source` it.
+
 
 ## Job Control: `ps` and `kill`
 
@@ -148,7 +150,6 @@ Killing a job using `kill` (only works on your jobs)
 ```
 kill [jobnum]
 ```
-
 
 ## End of Day 1
 
