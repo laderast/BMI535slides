@@ -107,7 +107,7 @@ class: center, middle
 
 ---
 
-<img src="image/5v.png" width=600>
+<img src="image/5V.png" width=600>
 ---
 # Big Data and Personalized Medicine
 
