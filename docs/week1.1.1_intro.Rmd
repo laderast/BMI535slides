@@ -48,11 +48,6 @@ I want to normalize your own curiosity and fuel your desire to learn more.
 If you are disruptive to class learning or disparaging to other students, I may mute you for the day.
 
 ---
-# Code of Conduct Violations
-
-Please report them here: 
-
----
 # Learning Objectives
 
 1. **Utilize** alternative data storage and data structures to handle Big Datasets

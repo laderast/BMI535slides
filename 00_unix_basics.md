@@ -46,6 +46,23 @@ What version of R?
 
 `which R`
 
+
+## Installing Samtools
+
+In your home directory:
+
+```
+wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2
+tar -xvf
+```
+
+```
+./configure --prefix=~/samtools/
+make
+make install
+```
+
+
 ## Environment Variables
 
 How does Unix know where software is located?
