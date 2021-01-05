@@ -237,6 +237,9 @@ class: center, middle
   - Document stores
   - Column stores
   - Graph Databases
+
+[Modern Data Formats for Big Bioinformatics Data
+Analytics](https://arxiv.org/ftp/arxiv/papers/1707/1707.05364.pdf)
   
 ---
 class: center, middle
