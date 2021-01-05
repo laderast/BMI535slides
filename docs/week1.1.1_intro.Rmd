@@ -56,7 +56,7 @@ If you are disruptive to class learning or disparaging to other students, we may
 1. **Create** and **Run** jobs on High Performance Computing systems including Exacloud and Amazon Web Services
 1. **Understand** and **utilize** the map-reduce programming pattern
 1. **Reproduce**, **Implement**, **Debug**, and **Document** an established biomedical data workflow
-1. **Utilize** container-based workflows on a remote systems
+1. **Utilize** container-based workflows on a remote system
 1. (BMI 635 only) **Design** and **Evaluate** the efficiency of parallelized analysis workflows
 
 ---
