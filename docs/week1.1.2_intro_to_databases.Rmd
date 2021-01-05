@@ -25,6 +25,31 @@ mono_light(
   text_font_size = "28px"
 )
 ```
+---
+# Installing software via `conda`
+
+https://geohackweek.github.io/Introductory/01-conda-tutorial/
+
+---
+
+# Shell Scripting (Chapters 23-26)
+
+- How to set up a shell script
+- What a she-bang is (23.3)
+
+---
+# Pipes (Chapter 18)
+
+- Know what a pipe `|` is and why it's useful
+
+---
+# Regular Expressions (Chapter 21)
+
+- Used to specify string matching queries
+- Highly flexible
+
+---
+
 class: center, middle
 
 # Disclaimer: I got a C in the Database Course

@@ -43,9 +43,9 @@ This class is governed by the [BioData Club Code of Conduct](https://biodata-clu
 
 This class is meant to be a psychologically safe space where it's ok to ask questions.
 
-I want to normalize your own curiosity and fuel your desire to learn more.
+We want to normalize your own curiosity and fuel your desire to learn more.
 
-If you are disruptive to class learning or disparaging to other students, I may mute you for the day.
+If you are disruptive to class learning or disparaging to other students, we may mute you for the day.
 
 ---
 # Learning Objectives
@@ -106,9 +106,8 @@ class: center, middle
 # Why Big Data?
 
 ---
-```{r echo=FALSE}
-knitr::include_graphics("image/5V.png")
-```
+
+<img src="image/5v.png" width=600>
 ---
 # Big Data and Personalized Medicine
 
@@ -119,11 +118,11 @@ knitr::include_graphics("image/health_data_types.png")
 ---
 # Precision Medicine
 
-```{r echo=FALSE}
-knitr::include_graphics("image/precision.png")
-```
+
+<img src="image/precision.png" width=750>
+
 ---
-# We need lots of genomes to make this happen
+# We need lots of genomes
 
 .pull-left[
 
@@ -134,7 +133,7 @@ Need to identify associations with disease
 
 .pull-right[
 
-  <img src="image/gwas_infographic.jpg">
+  <img src="image/gwas_infographic.jpg" width=400>
 ]
 
 ---
@@ -181,7 +180,7 @@ class: center, middle
 # We need more genomes!
 
 ---
-# Open Respositories of Genomic Data
+# Open Repositories of Genomic Data
 
 ```{r echo=FALSE}
 knitr::include_graphics("image/pgp.png")
@@ -333,19 +332,3 @@ Specifically:
 - [Editors: Vim](https://missing.csail.mit.edu/2020/editors/)
 - [Version Control: Git](https://missing.csail.mit.edu/2020/version-control/)
 
----
-# Shell Scripting (Chapters 23-26)
-
-- How to set up a shell script
-- What a she-bang is (23.3)
-
----
-# Pipes (Chapter 18)
-
-- Know what a pipe `|` is and why it's useful
-
----
-# Regular Expressions (Chapter 21)
-
-- Used to specify string matching queries
-- Highly flexible
