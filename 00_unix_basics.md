@@ -132,7 +132,7 @@ bwa
 
 If you have installed a different version of R, you can create an *alias* in your `.bashrc`:
 
-`alias R2 /usr/bin/R`
+`alias R2=/usr/bin/R`
 
 
 ## Job Control: `ps` and `kill`
