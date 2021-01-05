@@ -36,7 +36,9 @@ cd ~/
 
 `chmod` - please read up on file permissions.
 
-Note on learning how to make files executable by anyone:
+![](docs/image/file_permissions.jpg)
+
+https://haritibcoblog.com/2015/02/08/linux-concepts-filedirectory-permissions/
 
 
 
@@ -45,22 +47,6 @@ Note on learning how to make files executable by anyone:
 What version of R?
 
 `which R`
-
-
-## Installing Samtools
-
-In your home directory:
-
-```
-wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2
-tar -xvf
-```
-
-```
-./configure --prefix=~/samtools/
-make
-make install
-```
 
 
 ## Environment Variables
@@ -81,9 +67,12 @@ echo $PATH
 
 We will be using our `.bashrc` file to alter settings in our shell, including our `$PATH`. 
 
+
 ```
-export PATH="$HOME/FastQC/:$PATH"
+export PATH="/home/users/laderast/bwa-0.7.17/:$PATH"
 ```
+
+
 
 ## Editing your `.bashrc` using `nano`
 
@@ -101,24 +90,16 @@ nano .bashrc
 
 ## Note: `.bashrc` lives in your home directory, not elsewhere!
 
-## HOSTNAME specific commands
 
-
-When you are using multiple hosts on the same account, 
+Add the export line to your file:
 
 ```
-if [[ "$HOSTNAME" = state ]]; then
-    export PATH="$HOME/FastQC/:$PATH"
-elif [[ "$HOSTNAME" = exahead1 ]]; then
-    export PATH="/usr/bin/FastQC"
-fi
-
+export PATH="/home/users/laderast/bwa-0.7.17/:$PATH"
 ```
-## `alias`
 
-If you have installed a different version of R, you can create an *alias* in your `.bashrc`:
+Save and exit (control-x)
 
-`alias R2 /usr/bin/R`
+
 
 ## `source`
 
@@ -130,7 +111,29 @@ If you made a change and want it to run in your current session, you can use `so
 source ~/.bashrc
 ```
 
-## `find`
+## Check your path and try running bwa
+
+```
+echo $PATH
+
+bwa
+```
+
+## What did we just learn?
+
+- environment variables (`$HOME` and `$PATH`)
+- `export`
+- `.bashrc` files
+- `nano` for file editing
+- adding to our `$PATH` variable
+- `source` our `.bashrc`
+
+## `alias`
+
+If you have installed a different version of R, you can create an *alias* in your `.bashrc`:
+
+`alias R2 /usr/bin/R`
+
 
 ## Job Control: `ps` and `kill`
 
@@ -146,7 +149,24 @@ Killing a job using `kill` (only works on your jobs)
 kill [jobnum]
 ```
 
+
+## End of Day 1
+
+
 ## Very Helpful: `tmux`
 
 # Dependencies Manager: `conda` and `miniconda`
 
+## (optional) HOSTNAME specific commands
+
+
+When you are using multiple hosts on the same account, 
+
+```
+if [[ "$HOSTNAME" = state ]]; then
+    export PATH="$HOME/FastQC/:$PATH"
+elif [[ "$HOSTNAME" = exahead1 ]]; then
+    export PATH="/usr/bin/FastQC"
+fi
+
+```
