@@ -192,7 +192,6 @@ which conda
 
 https://geohackweek.github.io/Introductory/01-conda-tutorial/
 
-
 ## `conda` cheatsheet
 
 https://kapeli.com/cheat_sheets/Conda.docset/Contents/Resources/Documents/index
