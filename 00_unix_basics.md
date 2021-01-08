@@ -156,7 +156,9 @@ Go to your directory in `/home/courses/BMI535/students/` on `state`.
 
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sha256sum Miniconda3-latest-Linux-x86_64.sh #Make sure this matches the sum
+sha256sum Miniconda3-latest-Linux-x86_64.sh #Make sure this matches the sum here at
+# https://docs.conda.io/en/latest/miniconda.html#linux-installers
+# look at python 3.8
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
