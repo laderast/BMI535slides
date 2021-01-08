@@ -137,8 +137,115 @@ If you have installed a different version of R, you can create an *alias* in you
 
 Try editing your `.bashrc` to add this line. Then, `source` it.
 
+## End of Day 1
 
-## Job Control: `ps` and `kill`
+
+
+# Dependencies Manager: `conda` and `miniconda`
+
+You may have heard of `anaconda`, which is a software distribution of scientific computing, which includes a wide number of packages.
+
+It has a smaller cousin, called `miniconda`
+
+In general, `miniconda` is a good setup for installing software where you don't have permisison. It is relatively lightweight (400 Mb to start), and will let you install software on remote systems if you don't have admin privileges. 
+
+
+## Installing `miniconda`
+
+Go to your directory in `/home/courses/BMI535/students/` on `state`.
+
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sha256sum Miniconda3-latest-Linux-x86_64.sh #Make sure this matches the sum
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+I'm going to install `miniconda` in my folder on `state`. Agree to the terms, and then when asked, install it to your folder on state:
+
+```
+/home/courses/BMI535/students/laderast/miniconda3
+```
+
+## Add `miniconda` to your $PATH
+
+Edit your `~/.bashrc` file, and add the installation location to your $PATH:
+
+```
+export PATH="/home/courses/BMI535/students/laderast/miniconda3/bin:$PATH"
+```
+
+then source your `~/.bashrc` file:
+
+```
+source ~/.bashrc
+```
+
+check if your `conda` is accessible:
+
+```
+which conda
+```
+
+## `conda` tutorial
+
+https://geohackweek.github.io/Introductory/01-conda-tutorial/
+
+
+## `conda` cheatsheet
+
+https://kapeli.com/cheat_sheets/Conda.docset/Contents/Resources/Documents/index
+
+# Very Helpful: `tmux`
+
+When you want to run an interactive job and be able to sign out. Your job will keep running. This is especially helpful when you're on `exacloud`. 
+
+https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+
+# Shell Scripting
+
+I can't go over all of shell scripting here. We will talk a little bit about shebangs.
+
+https://missing.csail.mit.edu/2020/shell-tools/
+https://bash.cyberciti.biz/guide/Shebang
+
+
+```
+#!/usr/bin/env python
+
+print("This is a python script")
+```
+
+```
+chmod 771 print_this.py
+```
+
+```
+python print_this.py
+```
+
+```
+./print_this.py
+```
+
+# HOSTNAME specific commands
+
+
+When you are using multiple hosts on the same account, using ``
+
+```
+if [[ "$HOSTNAME" = "state" ]]; then
+    export PATH="$HOME/FastQC/:$PATH"
+fi
+
+if [[ "$HOSTNAME" = "exahead1" ]]; then
+    #put export and alias statements specific to exahead1 here
+    export PATH="$HOME/:$PATH"
+    alias R2=/usr/bin/R
+fi
+
+```
+
+# Job Control: `ps` and `kill`
 
 Finding all jobs that you're running:
 
@@ -152,26 +259,3 @@ Killing a job using `kill` (only works on your jobs)
 kill [jobnum]
 ```
 
-## End of Day 1
-
-
-## Very Helpful: `tmux`
-
-# Dependencies Manager: `conda` and `miniconda`
-
-In general, `miniconda` is a good setup for installing software where you don't have permisison.
-
-
-## (optional) HOSTNAME specific commands
-
-
-When you are using multiple hosts on the same account, 
-
-```
-if [[ "$HOSTNAME" = state ]]; then
-    export PATH="$HOME/FastQC/:$PATH"
-elif [[ "$HOSTNAME" = exahead1 ]]; then
-    export PATH="/usr/bin/FastQC"
-fi
-
-```
