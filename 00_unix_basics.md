@@ -195,11 +195,6 @@ https://geohackweek.github.io/Introductory/01-conda-tutorial/
 
 https://kapeli.com/cheat_sheets/Conda.docset/Contents/Resources/Documents/index
 
-# Very Helpful: `tmux`
-
-When you want to run an interactive job and be able to sign out. Your job will keep running. This is especially helpful when you're on `exacloud`. 
-
-https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
 
 # Shell Scripting
 
@@ -226,6 +221,14 @@ python print_this.py
 ```
 ./print_this.py
 ```
+
+# Very Helpful: `tmux`
+
+When you want to run an interactive job and be able to sign out. Your job will keep running. This is especially helpful when you're on `exacloud`. 
+
+https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+
+
 
 # HOSTNAME specific commands
 
