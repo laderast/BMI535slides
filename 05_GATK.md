@@ -30,6 +30,10 @@ chmod 711 [fastqc directory]
 export PATH="$HOME/FastQC/:$PATH"
 # create a symbolic link called ~/var_data to easily access the data
 ln -s /home/courses/BMI535/data/VariantCalling/ ~/var_data
+
+# create symbolic link
+ln -s /home/courses/BMI535/students/laderast ~/BMI535/
+
 #make an output directory
 mkdir ~/qc_analyses
 
