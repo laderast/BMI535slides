@@ -20,11 +20,20 @@ https://github.com/gatk-workflows/gatk4-data-processing
 - Download: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
 
 ```
+## Download FASTQC
+wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
+unzip fastqc_v0.11.9.zip
+chmod 711 [fastqc directory]
+
 # add my FastQC directory to the PATH variable
+# you can add this to your .bash_profile
 export PATH="$HOME/FastQC/:$PATH"
-# create a symbolic link called ~/var_data to easily access it
+# create a symbolic link called ~/var_data to easily access the data
 ln -s /home/courses/BMI535/data/VariantCalling/ ~/var_data
-fastqc -o ~/var_data/fastq/SRR702072_1.filt.fastq 
+#make an output directory
+mkdir ~/qc_analyses
+
+fastqc -o ~/qc_analyses ~/var_data/fastq/SRR702072_1.filt.fastq ~/var_data/fastq/SRR702072_2.filt.fastq
 ```
 
 ## BWA
@@ -32,18 +41,12 @@ fastqc -o ~/var_data/fastq/SRR702072_1.filt.fastq
 Main page: http://bio-bwa.sourceforge.net/
 
 ```
-wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
-bzip2 -d bwa-0.7.17.tar.gz
-tar -xvf bwa-0.7.17.tar
-cd bwa-0.7.17
-more README.md
-# compile the code
-make
+conda install -c bioconda bwa
+which bwa
 ```
 
 ```
-# Add my bwa-0.7.17/ folder to PATH
-export PATH="$HOME/bwa-0.7.17:$PATH"
+
 # run bwa index to create index on hg19 genome file
 # You don't need to run this - it's already created
 # Just included so you know that this is a step
