@@ -65,10 +65,10 @@ bwa mem -Y -t 12 -R '@RG\tID:SRR702072\tPL:Illumina\tLB:SRR702072\tSM:SRR702072'
 
 # Samtools
 
-Install samtools and add to your `$PATH` - more instructions here: http://www.htslib.org/download/
+Install samtools via conda
 
 ```
-wget https://github.com/samtools/samtools/releases/download/1.10/samtools-1.10.tar.bz2
+conda install -c bioconda samtools
 ```
 
 Run `samtools flagstat` on our `.sam` file:
