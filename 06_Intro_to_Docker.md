@@ -174,7 +174,7 @@ If you're in the folder.
 
 ## mybinder.org: a place for sharing Reproducible Research
 
-![](image/binder.png)
+![](image/binder.jpg)
 
 [Slides introducing mybinder](https://docs.google.com/presentation/d/1y2HrtsmERC9hfliJkWpJVQ28mzJNmoWNW44XizXaHok/edit?usp=sharing)
 
