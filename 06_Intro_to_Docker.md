@@ -2,43 +2,27 @@
 
 ## Bare Metal and VM Servers
 
-- Bare Metal
-- Virtual Machines
-- Containers
-
 ![](image/containers-vs-virtual-machines.jpg)
 https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms
 
-What we usually think of as a server (like `state`) is in a "Bare Metal" configuration. That means it's only running one operating system (in our case Ubuntu).
-
-What if we need to run software that uses a different operating system? One alternative to this are Virtual Machines (VMs). Virtual Machines (VM) contain an entire OS (Linux, Windows, or MacOS) in order to run software. This can take a lot of storage and *memory*, especially since each VM needs disk space to store files in it.
-
-Virtual Machines have the following Advantages:
-
-- **Isolation** - the Virtual Machines don't communicate with each other. That means that if one VM goes down, the other VMs won't go down.
-- **Separate File Systems** - VMs don't share files, which prevents any issues with multiple VMs overwriting files.
-
-VMs have the following disadvantages:
-
-- **Storage and Memory** requirements. Because each VM could contain a different OS, each VM is independent from each other.
-- **Separate File Systems** - VMs don't share files, which makes getting files from one VM to another VM difficult.
-
 ## What is Docker?
 
-Instead of a VM, docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
+Docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
 
 They contain a limited file system that is isolated from your system, but you can connect other parts of your file system to them with *Volumes*.
+
+> Docker lets you package software and its dependencies in a way that when you run it, the same output can be reproduced across any machine that runs Docker, regardless of OS/processor architecture.
 
 ## What problems are Docker meant to Solve?
 
 > The key benefit of Docker is that it allows users to **package an application with all of its dependencies into a standardized unit** for software development. - https://docker-curriculum.com/#what-is-docker-
 
+- **Reproducibility** - Can precisely specify which versions of packages and software to use, so you can *replicate analysis in a reproducible manner*.
+- **Containers are OS independent** - can run a docker container on Linux, Mac OS, Windows and it will work
 - **Containers are lightweight** - require much less system overhead and resources
 - **Software administration** - containers are independent of each other (very good for system administrators)
     - Gives you granular control over the software
     - Can take down one service without affecting the others
-- **Containers are OS independent** - can run a docker container on Linux, Mac OS, Windows and it will work
-- **Reproducibility** - Can precisely specify which versions of packages and software to use, so you can *replicate analysis in a reproducible manner*.
 
 ## What software is containerized?
 
@@ -176,8 +160,6 @@ To get out of it.
 
 
 ## Making your own Docker containers: Dockerfiles
-
-[Example Dockerfile]()
 
 Any file in a folder called `Dockerfile` will be used to build a container. This contains instructions for installing all of the software and its dependencies.
 
