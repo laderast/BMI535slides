@@ -131,10 +131,12 @@ ls
 cd my_data
 ```
 
-Which emans you can run `gatk` as usual in the container. Any files you write to `my_data` will persist
+Which emans you can run `gatk` as usual in the container. Any files you write to `my_data` will persist.
+
+Make sure that you've converted your `sam` file to a `bam` file, and sorted it before running `MarkDuplicates`
 
 ```{r}
-gatk MarkDuplicates -I 
+gatk MarkDuplicates -I sortedSRR702072.bam -O SRR702072marked-dupes.bam -M metrics.txt
 ```
 
 When you're done with the container, use
@@ -143,11 +145,8 @@ When you're done with the container, use
 exit 
 ```
 
-To get out of it. Make sure that you've converted your `sam` file to a `bam` file
+To get out of it. 
 
-```
-
-```
 
 ## Making your own Docker containers: Dockerfiles
 
@@ -158,7 +157,7 @@ The good news is that you don't have to build your Dockerfiles from scratch.
 You can build on a previous Docker container by using a `FROM` command.
 
 ```
-FROM rocker/r-ver:3.4.4    ### Build on top of the rocker/r-ver image
+FROM rocker/r-ver:3.4.4    ### Build on top of the rocker/r-ver image with tag "3.4.4"
 
 RUN R -e "install.packages('stringr')"  ##Run the system command R -e "install.packages"
 ```
