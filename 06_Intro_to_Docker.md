@@ -182,6 +182,8 @@ You can share your analyses in multiple ways: a Jupyter Notebook, an RStudio Pro
 
 `mybinder.org` uses donated compute time. You are limited to 1 GB memory and 40 Gb of disk space.
 
+[A Practical Guide to Reproducible Papers](https://biodata-club.github.io/talks/repro_paper.pdf)
+
 # Acknowledgements
 
 https://docker-curriculum.com/
