@@ -31,6 +31,7 @@ They contain a limited file system that is isolated from your system, but you ca
 
 > The key benefit of Docker is that it allows users to **package an application with all of its dependencies into a standardized unit** for software development. - https://docker-curriculum.com/#what-is-docker-
 
+- **Containers are lightweight** - require much less system overhead and resources
 - **Software administration** - containers are independent of each other (very good for system administrators)
     - Gives you granular control over the software
     - Can take down one service without affecting the others
