@@ -248,5 +248,5 @@ https://github.com/biodev/HNSCC_Notebook
 
 # Acknowledgements
 
-https://docker-curriculum.com/
-https://biodata-club.github.io/talks/repro_paper.pdf
+- https://docker-curriculum.com/
+- https://biodata-club.github.io/talks/repro_paper.pdf
