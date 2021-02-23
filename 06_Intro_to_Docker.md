@@ -50,9 +50,11 @@ Some of these definitions were adapted from: https://docker-curriculum.com/
 
 ## Containers versus images
 
-A Docker Image is a collection of software and its dependencies that can be pulled from DockerHub or another Registry.
+A **Docker Image** is a collection of software and its dependencies that can be pulled from DockerHub or another Registry.
 
-A Docker container is an instance of the image running on a machine. Multiple containers can be run for a docker image, and these containers will be independent of each other.
+A **Docker Container** is an instance of the image running on a machine. 
+
+Multiple containers can be run from a single docker image, and these containers will be independent of each other.
 
 ## Drawbacks to Docker
 
