@@ -93,7 +93,7 @@ Some of them run as `services`, such as the `rocker` containers, which runs in t
 ## Docker Volumes
 
 
-!S[Docker Volumes](image/docker-volumes.jpg)
+![Docker Volumes](image/docker-volumes.jpg)
 https://codeblog.dotsandbrackets.com/persistent-data-docker-volumes/
 
 
