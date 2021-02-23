@@ -33,15 +33,16 @@ Almost all Bioinformatics Software and Web Stacks!
 
 ![](image/docker.png)
 
-- **Images** - The blueprints of our application which form the basis of containers. In the demo above, we used the docker pull command to download the busybox image.
-- **Containers** - Created from Docker images and run the actual application. We create a container using docker run which we did using the busybox image that we downloaded. A list of running containers can be seen using the docker ps command.
+- **Images** - The blueprints of our application which form the basis of containers.
+- **Containers** - Created from Docker images and run the actual application. We create a container using `docker run` based on an image. A list of running containers can be seen using the `docker ps` command.
 - **Docker Daemon** - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.
 - **Docker Client** - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
 - **Docker Hub** - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
-- **Volume** - A File Directory that persists beyond a container
+- **Volume** - A File Directory that persists beyond a container.
 - **Docker Compose** - utility that lets you connect multiple containers with a volume and with each other. 
-- **Kubernetes** - utility that lets you run Docker (and other container systems) on a HPC cluster.
+- **Kubernetes** - utility that lets you run Docker (and other container systems) on a HPC cluster. Handles distributing an application over an allocation.
 
+Some of these definitions were adapted from: https://docker-curriculum.com/
 
 ## Drawbacks to Docker
 
@@ -71,16 +72,27 @@ docker ps
 
 ## Broad Institute GATK Docker Image
 
+For more information about the Docker container:
+
 https://hub.docker.com/r/broadinstitute/gatk
+
+To download the image, I ran:
 
 ```
 docker pull broadinstitute/gatk
 ```
 
+## `docker run`
+
+We will be using `docker run` to use our container. It works like a unix shell - we will open up an interactive terminal and then run `gatk` code inside the container.
+
+The way you use a container varies - you'll need to check the documentation for each container. 
+
+Some of them run as `services`, such as the `rocker` containers, which runs in the background on your machine and you'll access them via a your browser.
+
 ## Docker Volumes
 
-Volumes let you use files and folders outside of the built in container file system.
-
+Volumes let you use files and folders outside of the built in container file system. In our `docker run` statement, we'll make the following volume.
 
 ```
 -v ~/BMI535:/gatk/my_data
@@ -89,6 +101,13 @@ Volumes let you use files and folders outside of the built in container file sys
 Everything to the left of the colon (`~/BMI535`) is a file on your system that you want to map to the container. This needs to be an *absolute* path.
 
 Everything to the right of the colon (`/gatk/my_data`) is the *Volume* in the container's filesystem that we want to map to.
+
+You can specify multiple volumes using multiple `-v` flags:
+
+```
+-v ~/BMI535:/gatk/my_data
+-v ~/var_data/:/gatk/var_data
+```
 
 ## Using the GATK Docker Image
 
@@ -115,7 +134,7 @@ cd my_data
 Which emans you can run `gatk` as usual in the container. Any files you write to `my_data` will persist
 
 ```{r}
-gatk MarkDuplicates 
+gatk MarkDuplicates -I 
 ```
 
 When you're done with the container, use
@@ -124,7 +143,11 @@ When you're done with the container, use
 exit 
 ```
 
-To get out of it.
+To get out of it. Make sure that you've converted your `sam` file to a `bam` file
+
+```
+
+```
 
 ## Making your own Docker containers: Dockerfiles
 
