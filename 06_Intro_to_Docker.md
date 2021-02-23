@@ -6,6 +6,9 @@
 - Virtual Machines
 - Containers
 
+![](image/containers-vs-virtual-machines.jpg)
+https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms
+
 What we usually think of as a server (like `state`) is in a "Bare Metal" configuration. That means it's only running one operating system (in our case Ubuntu).
 
 What if we need to run software that uses a different operating system? One alternative to this are Virtual Machines (VMs). Virtual Machines (VM) contain an entire OS (Linux, Windows, or MacOS) in order to run software. This can take a lot of storage and *memory*, especially since each VM needs disk space to store files in it.
