@@ -1,13 +1,11 @@
 # Introduction to Docker and Docker Containers
 
-## Bare Metal and VM Servers
-
 ![](image/containers-vs-virtual-machines.jpg)
 https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms
 
 ## What is Docker?
 
-Docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
+Docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*, a service that runs on a machine.
 
 They contain a limited file system that is isolated from your system, but you can connect other parts of your file system to them with *Volumes*.
 
@@ -208,6 +206,9 @@ RUN if [ -f install.R ]; then R --quiet -f install.R; fi
 
 ![](image/binder_example.jpg)
 
+A binder is a unit of reproducible research. If I give you a binder link that contains my code, you will be able to reproduce all of the analyses that it contains.
+
+A binder usually lives in a repository, usually GitHub. 
 
 ## mybinder.org: a place for sharing Reproducible Research
 
