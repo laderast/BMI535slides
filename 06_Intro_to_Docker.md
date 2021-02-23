@@ -2,9 +2,9 @@
 
 ## What is Docker?
 
-Alternative to Virtual Machines, which contain an entire OS (Linux, Windows, or MacOS) in order to run software.
+Alternative to Virtual Machines (VM), which contain an entire OS (Linux, Windows, or MacOS) in order to run software.
 
-Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
+Instead of a VM, docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
 
 They contain a limited file system that is isolated from your system, but you can connect other parts of your file system to them with *Volumes*.
 
