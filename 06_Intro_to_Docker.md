@@ -6,9 +6,19 @@
 - Virtual Machines
 - Containers
 
-What we usually think of as a server (like `state`) is in a "Bare Metal" configuration. That means it's only running one operating system.
+What we usually think of as a server (like `state`) is in a "Bare Metal" configuration. That means it's only running one operating system (in our case Ubuntu).
 
 What if we need to run software that uses a different operating system? One alternative to this are Virtual Machines (VMs). Virtual Machines (VM) contain an entire OS (Linux, Windows, or MacOS) in order to run software. This can take a lot of storage and *memory*, especially since each VM needs disk space to store files in it.
+
+Virtual Machines have the following Advantages:
+
+- **Isolation** - the Virtual Machines don't communicate with each other. That means that if one VM goes down, the other VMs won't go down.
+- **Separate File Systems** - VMs don't share files, which prevents any issues with multiple VMs overwriting files.
+
+VMs have the following disadvantages:
+
+- **Storage and Memory** requirements. Because each VM could contain a different OS, each VM is independent from each other.
+- **Separate File Systems** - VMs don't share files, which makes getting files from one VM to another VM difficult.
 
 Instead of a VM, docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
 
