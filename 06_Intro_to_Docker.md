@@ -174,6 +174,8 @@ If you're in the folder.
 
 ## mybinder.org: a place for sharing Reproducible Research
 
+![](image/binder.png)
+
 [Slides introducing mybinder](https://docs.google.com/presentation/d/1y2HrtsmERC9hfliJkWpJVQ28mzJNmoWNW44XizXaHok/edit?usp=sharing)
 
 We'll be using `mybinder.org` to test out a reproducible notebook. It uses a utility called `repo2docker` that converts a github repository to a Docker Container.
