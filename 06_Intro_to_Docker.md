@@ -92,6 +92,11 @@ Some of them run as `services`, such as the `rocker` containers, which runs in t
 
 ## Docker Volumes
 
+
+[Docker Volumes](image/docker-volumes.jpg)
+https://codeblog.dotsandbrackets.com/persistent-data-docker-volumes/
+
+
 Volumes let you use files and folders outside of the built in container file system. In our `docker run` statement, we'll make the following volume.
 
 ```
