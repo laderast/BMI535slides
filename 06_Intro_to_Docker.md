@@ -150,6 +150,8 @@ To get out of it.
 
 ## Making your own Docker containers: Dockerfiles
 
+[Example Dockerfile]()
+
 Any file in a folder called `Dockerfile` will be used to build a container. This contains instructions for installing all of the software and its dependencies.
 
 The good news is that you don't have to build your Dockerfiles from scratch.
@@ -172,6 +174,27 @@ docker build
 
 If you're in the folder.
 
+## Dockerfile Example
+
+```
+FROM rocker/binder:latest
+
+## Declares build arguments
+ARG NB_USER
+ARG NB_UID
+
+## Copies your repo files into the Docker Container
+USER root
+COPY . ${HOME}
+RUN chown -R ${NB_USER} ${HOME}
+
+## Become normal user again
+USER ${NB_USER}
+
+## Run an install.R script, if it exists.
+RUN if [ -f install.R ]; then R --quiet -f install.R; fi 
+```
+
 ## What is a Binder?
 
 ![](image/binder_example.jpg)
@@ -181,7 +204,6 @@ If you're in the folder.
 
 ![](image/binder.jpg)
 
-[Slides introducing mybinder](https://docs.google.com/presentation/d/1y2HrtsmERC9hfliJkWpJVQ28mzJNmoWNW44XizXaHok/edit?usp=sharing)
 
 We'll be using `mybinder.org` to test out a reproducible notebook. It uses a utility called `repo2docker` that converts a github repository to a Docker Container.
 
@@ -189,8 +211,22 @@ You can share your analyses in multiple ways: a Jupyter Notebook, an RStudio Pro
 
 `mybinder.org` uses donated compute time. You are limited to 1 GB memory and 40 Gb of disk space.
 
+## Some Lessons We learned in Starting a Binder
+
+https://github.com/biodev/HNSCC_Notebook
+
 [A Practical Guide to Reproducible Papers](https://biodata-club.github.io/talks/repro_paper.pdf)
+
+
+- Requires a lot of distributed expertise (tracking efforts/who did what)
+    - Code review should be done within your group
+- Code will still be very messy! (that’s ok)
+- Making a reproducible container involves a lot of crying and frustration
+- Binder can break (can be difficult to maintain)
+- Try to version software using version tags
+
 
 # Acknowledgements
 
 https://docker-curriculum.com/
+https://biodata-club.github.io/talks/repro_paper.pdf
