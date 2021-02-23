@@ -172,6 +172,11 @@ docker build
 
 If you're in the folder.
 
+## What is a Binder?
+
+![](image/binder_example.jpg)
+
+
 ## mybinder.org: a place for sharing Reproducible Research
 
 ![](image/binder.jpg)
