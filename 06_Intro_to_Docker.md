@@ -1,6 +1,6 @@
 # Introduction to Docker and Docker Containers
 
-## What is Docker?
+## Bare Metal and VM Servers
 
 - Bare Metal
 - Virtual Machines
@@ -22,6 +22,8 @@ VMs have the following disadvantages:
 
 - **Storage and Memory** requirements. Because each VM could contain a different OS, each VM is independent from each other.
 - **Separate File Systems** - VMs don't share files, which makes getting files from one VM to another VM difficult.
+
+## What is Docker?
 
 Instead of a VM, docker uses *containers*. Containers contain just enough linux utilities and associated code to run that code on any machine. Some of them contain command line utilities, some of them can contain web servers/IDEs, some have databases. These containers are managed by *Docker Daemon*.
 
