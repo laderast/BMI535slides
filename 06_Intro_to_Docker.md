@@ -212,39 +212,6 @@ USER ${NB_USER}
 RUN if [ -f install.R ]; then R --quiet -f install.R; fi 
 ```
 
-## What is a Binder?
-
-![](image/binder_example.jpg)
-
-A binder is a unit of reproducible research. If I give you a binder link that contains my code, you will be able to reproduce all of the analyses that it contains.
-
-A binder usually lives in a repository, usually GitHub. 
-
-## mybinder.org: a place for sharing Reproducible Research
-
-![](image/binder.jpg)
-
-
-We'll be using `mybinder.org` to test out a reproducible notebook. It uses a utility called `repo2docker` that converts a github repository to a Docker Container.
-
-You can share your analyses in multiple ways: a Jupyter Notebook, an RStudio Project, or even a Shiny application. 
-
-`mybinder.org` uses donated compute time. You are limited to 1 GB memory and 40 Gb of disk space.
-
-## Some Lessons We learned in Starting a Binder
-
-https://github.com/biodev/HNSCC_Notebook
-
-[A Practical Guide to Reproducible Papers](https://biodata-club.github.io/talks/repro_paper.pdf)
-
-
-- Requires a lot of distributed expertise (tracking efforts/who did what)
-    - Code review should be done within your group
-- Code will still be very messy! (that’s ok)
-- Making a reproducible container involves a lot of crying and frustration
-- Binder can break (can be difficult to maintain)
-- Try to version software using version tags
-
 
 # Acknowledgements
 
